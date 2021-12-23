@@ -1,0 +1,87 @@
+@import './shared/mixin.scss';
+@import './shared/color.scss';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: url($background) repeat;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Manrope', sans-serif;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-top: 0;
+
+    /* for edge cases: */
+    width: 100%;
+    max-width: 100%;
+
+    @include respond-to('small') {
+        width: map-get($containerWidth, 'small');
+        padding: 0;
+    }
+
+    @include respond-to('medium') {
+        width: map-get($containerWidth, 'medium');
+    }
+
+    @include respond-to('medium-large') {
+        width: map-get($containerWidth, 'medium-large');
+    }
+
+    @include respond-to('large') {
+        width: map-get($containerWidth, 'large');
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    line-height: 0;
+}
+
+.unstyled-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.children-padding {
+    padding-top: 6rem;
+}

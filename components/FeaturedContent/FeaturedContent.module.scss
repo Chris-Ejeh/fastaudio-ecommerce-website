@@ -1,0 +1,119 @@
+@import '../../styles/shared/color.scss';
+@import '../../styles/shared/background.scss';
+
+.firstContainer,
+.secondContainer,
+.thirdContainer {
+    display: flex;
+    border-radius: 8px;
+    position: relative;
+}
+
+.firstInfo,
+.secondInfo,
+.thirdInfo {
+    flex: 0 0 30%;
+    margin-right: 7rem;
+}
+
+.firstContainer {
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background: url($featuredBackground) $primary-color no-repeat left -8rem top 20%;
+    height: 560px;
+    z-index: 1;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    .name {
+        font-size: 56px;
+        line-height: 58px;
+        letter-spacing: 2px;
+    }
+
+    .description {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 200;
+        mix-blend-mode: normal;
+        opacity: 0.75;
+        margin-bottom: 2rem;
+    }
+
+    .button {
+        background-color: $black;
+    }
+}
+
+.firstImage {
+    margin-left: 10rem;
+    margin-top: 8rem;
+}
+
+.secondContainer {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 320px;
+    background-position: left;
+    margin-bottom: 2rem;
+
+    .name {
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: 2px;
+    }
+
+    .infoContainer {
+        margin-left: 10rem;
+    }
+
+    .button {
+        background-color: transparent;
+        border: $black 1px solid;
+        color: $black;
+    }
+}
+
+.thirdContainer {
+    justify-content: space-between;
+    margin-bottom: 10rem;
+
+    .name {
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: 2px;
+    }
+
+    .image {
+        border-radius: 8px;
+    }
+
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $grey;
+        border-radius: 8px;
+        height: 320px;
+        width: 540px;
+        margin-left: 1rem;
+    }
+
+    .button {
+        background-color: transparent;
+        border: $black 1px solid;
+        color: $black;
+    }
+}
+
+.name {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+}

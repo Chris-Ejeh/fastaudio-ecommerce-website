@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+#Storybook
+/.storybook/
+
 # production
 /build
 
@@ -35,3 +38,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+#Prismic
+/sm.json

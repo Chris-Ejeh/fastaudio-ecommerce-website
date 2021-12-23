@@ -1,0 +1,48 @@
+@import '../../styles/shared/color.scss';
+
+.footer {
+    background: $dark-grey;
+    padding: 4rem 0 2rem;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footerNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navItems {
+    display: flex;
+    flex-direction: row;
+}
+
+.navItem {
+    margin-left: 3rem;
+}
+
+.links {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footerInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}

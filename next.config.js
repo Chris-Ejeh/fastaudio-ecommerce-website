@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    reactStrictMode: true,
+    //reactStrictMode: true,
     cssModules: true,
     cssLoaderOptions: {
         importLoaders: 2,
@@ -9,18 +9,17 @@ const nextConfig = {
     },
 
     trailingSlash: true,
-    webpack5: false,
-    webpack: (config) => {
-        config.module.rules.push({
-            test: /\.svg$/,
-            issuer: {
-                test: /\.(js|ts)x?$/,
-            },
-            use: ['@svgr/webpack'],
-        });
+    // webpack: (config) => {
+    //     config.module.rules.push({
+    //         test: /\.svg$/,
+    //         issuer: {
+    //             test: /\.(js|ts)x?$/,
+    //         },
+    //         use: ['@svgr/webpack'],
+    //     });
 
-        return config;
-    },
+    //     return config;
+    // },
 };
 
 module.exports = nextConfig;

@@ -1,0 +1,66 @@
+@import '../../styles/shared/color.scss';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rem;
+
+    &:nth-last-child(2n) {
+        flex-direction: row-reverse;
+    }
+}
+
+.infoContainer {
+    width: 445px;
+}
+
+.newProduct {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: $primary-color;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 44px;
+
+    letter-spacing: 1.42857px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.description {
+    line-height: 25px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-bottom: 3rem;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+.buttonContainer {
+    display: flex;
+}
+
+.button {
+    background-color: $primary-color;
+    color: $white;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

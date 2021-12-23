@@ -1,0 +1,139 @@
+@import '../../styles/shared/color.scss';
+
+.cartContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    overflow: auto;
+}
+
+.modal {
+    display: flex;
+    border-radius: 8px;
+    background: white;
+    width: 21%;
+    height: auto;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    padding: 2rem;
+    position: fixed;
+    z-index: 1;
+}
+
+.modalEmpty {
+    top: 23%;
+}
+
+.modalMain {
+    top: 40%;
+}
+
+.cartHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartHeaderText {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+}
+
+.cartButton {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    text-decoration-line: underline;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: $black;
+}
+
+.cartContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.imageTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartInfo {
+    margin-left: 1rem;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 25px;
+    text-transform: uppercase;
+    width: 50%;
+    margin: 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 25px;
+    text-transform: uppercase;
+    margin: 0;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.countButtonContainer {
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.countButton {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    color: $black;
+    opacity: 0.25;
+}
+
+.buttonText {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.totalContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.totalPrice {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}

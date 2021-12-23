@@ -1,0 +1,61 @@
+@import '../../styles/shared/color.scss';
+
+.button {
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.primary {
+    background-color: $primary-color;
+    color: $white;
+    padding: 1rem;
+}
+
+.back {
+    outline: none;
+    background-color: $white;
+    color: $black;
+    font-weight: 200;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-bottom: 4rem;
+}
+
+.count {
+    color: $black;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 1rem;
+}
+
+.cart {
+    background-color: $primary-color;
+    color: $white;
+    padding: 1rem;
+}
+
+.countButtonContainer {
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.buttonText {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}

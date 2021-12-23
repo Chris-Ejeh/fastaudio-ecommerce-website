@@ -1,0 +1,45 @@
+@import '../../styles/shared/color.scss';
+
+.productContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.featuresContainer {
+    color: $black;
+    margin-bottom: 4rem;
+    flex: 0 0 635px;
+}
+
+.features {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14286px;
+    text-transform: uppercase;
+}
+
+.featuresContent {
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 25px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.galleryContainer {
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.galleryLeftLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image {
+    border-radius: 8px;
+}

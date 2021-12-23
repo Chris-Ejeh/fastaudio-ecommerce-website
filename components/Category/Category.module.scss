@@ -1,0 +1,58 @@
+@import '../../styles/shared/color.scss';
+@import '../../styles/shared/background.scss';
+
+.container {
+    background-color: $grey;
+    height: 200px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10rem;
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    top: -5rem;
+    bottom: 0;
+}
+
+.textContainer {
+    width: 100%;
+}
+
+.name {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1.228571px;
+    margin: 0.5rem;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.linkText {
+    color: $black;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 18px;
+    letter-spacing: 1px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.icon {
+    color: $primary-color;
+}
