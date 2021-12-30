@@ -129,11 +129,36 @@
     margin: 1rem 0;
 }
 
+.grandTotalContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+
+    & .totalPrice {
+        color: $primary-color;
+    }
+}
+
+.totalText {
+    color: $black;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
 .totalPrice {
     font-size: 18px;
     font-weight: bold;
     line-height: 18px;
     letter-spacing: 1px;
-    text-transform: uppercase;
     margin: 0;
+}
+
+.checkoutButton {
+    width: 100%;
 }

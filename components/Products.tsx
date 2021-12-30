@@ -39,6 +39,7 @@ const Products: FC<IProductsProps> = ({ blockInfos, products }) => {
                                     router.push(`${router.pathname}/${encodeURIComponent(product.slug)}`);
                                     storeRoutePath(product.slug);
                                 }}
+                                type="button"
                             />
                         </Product>
                     );

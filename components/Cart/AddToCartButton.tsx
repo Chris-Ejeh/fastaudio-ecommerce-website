@@ -15,6 +15,7 @@ const AddToCartButton: FC<AddToCartButtonProps> = ({ addToCartClick }) => {
             buttonColor={ButtonColors.cartButton}
             title="Add to cart"
             onClick={addToCartClick}
+            type="button"
         />
     );
 };

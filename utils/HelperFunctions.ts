@@ -1,11 +1,8 @@
-import { useReactiveVar } from '@apollo/client';
-
-import { storeRoutePath } from '../apollo/apollo-cache';
 import { CartItems } from '../apollo/cart/createCartItem';
 import { products } from './../seed-data';
 import { IProducts, ProductType } from './types';
 
-export const getProducts = (productCategory: ProductType) => {
+export const getProducts = (productCategory: ProductType | string) => {
     return products.filter((items) => {
         if (items.category === productCategory) {
             return items;
@@ -13,8 +10,7 @@ export const getProducts = (productCategory: ProductType) => {
     });
 };
 
-export const getProduct = () => {
-    const pathname = useReactiveVar(storeRoutePath);
+export const getProduct = (pathname: string) => {
     return products.filter((product) => {
         if (product.slug === pathname) {
             return product;

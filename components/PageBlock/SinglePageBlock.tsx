@@ -34,6 +34,7 @@ const SinglePageBlock: FC<SinglePageProps> = ({ product }) => {
                             title="See Product"
                             buttonColor={ButtonColors.PrimaryColor}
                             onClick={() => router.push(`${PathnameType.Headphones}/${encodeURIComponent(item.id)}`)}
+                            type="button"
                         />
                     </div>
                 ))}

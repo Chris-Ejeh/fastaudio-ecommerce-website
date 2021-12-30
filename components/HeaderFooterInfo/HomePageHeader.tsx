@@ -42,6 +42,7 @@ const HomePageHeader: FC<HomePageHeaderProps> = ({ product }) => {
                                     title="See Product"
                                     buttonColor={ButtonColors.PrimaryColor}
                                     onClick={() => router.push(`headphones/${encodeURIComponent(product.id)}`)}
+                                    type="button"
                                 />
                             )}
                         </div>

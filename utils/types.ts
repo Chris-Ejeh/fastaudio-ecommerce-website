@@ -14,6 +14,7 @@ export enum PathnameType {
     Headphones = '/headphones',
     Speaker = '/speakers',
     Earphones = '/earphones',
+    Checkout = '/checkout',
 }
 
 export enum ProductType {
@@ -29,15 +30,20 @@ export enum ButtonColors {
     cartButton = 'cart',
 }
 
-export enum RedirectID {
-    FirstContent = 'ckuvmsupr0035b70wfjruklsy',
-    SecondContent = 'ckuvmsupo0028b70w9ibs61an',
-    ThirdContent = 'ckuvh1kef0171ig0wccs7lyhg',
-}
-
 export enum ButtonType {
     CategoryButton = 'category',
     SingleProductButton = 'product',
+}
+
+export enum TextWidthType {
+    FullWidth = 'fullwidth',
+    HalfWidth = 'halfwidth',
+    radioWidth = 'radiowidth',
+}
+
+export enum CartLayoutType {
+    Cart = 'cart',
+    Checkout = 'checkout',
 }
 
 export interface IProducts {
@@ -137,4 +143,17 @@ export interface apolloCartItem {
     price: number;
     quantity: number;
     image: string;
+}
+
+export interface FormDataProps {
+    name: string;
+    email: string;
+    tel: string;
+    address: string;
+    zip: string;
+    city: string;
+    country: string;
+    payment: string;
+    moneyNumber: string;
+    pin: string;
 }

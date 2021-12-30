@@ -13,9 +13,9 @@ interface CountButtonProps {
 const CountButton: FC<CountButtonProps> = ({ value, negativeClick, positiveClick }) => {
     return (
         <div className={styles.countButtonContainer}>
-            <Button buttonColor={ButtonColors.countButton} title="-" onClick={negativeClick} />
+            <Button buttonColor={ButtonColors.countButton} title="-" onClick={negativeClick} type="button" />
             <p className={styles.buttonText}>{value}</p>
-            <Button buttonColor={ButtonColors.countButton} title="+" onClick={positiveClick} />
+            <Button buttonColor={ButtonColors.countButton} title="+" onClick={positiveClick} type="button" />
         </div>
     );
 };

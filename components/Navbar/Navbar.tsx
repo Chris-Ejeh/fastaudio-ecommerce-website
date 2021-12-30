@@ -49,6 +49,7 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
                     onClick={() => {
                         setCartOpen(true);
                     }}
+                    type="button"
                     aria-pressed="false"
                     // eslint-disable-next-line prettier/prettier
                     tabIndex={0}

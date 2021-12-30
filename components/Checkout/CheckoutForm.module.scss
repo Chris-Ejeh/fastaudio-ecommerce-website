@@ -1,0 +1,125 @@
+@import '../../styles/shared/color.scss';
+
+.checkoutContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formContainer {
+    border: 0.3rem darkgrey solid;
+    padding: 2rem;
+    width: 750px;
+}
+
+.cartContainer {
+    border: 0.3rem darkgrey solid;
+    padding: 2rem;
+    width: 350px;
+}
+
+.checkout {
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14286px;
+    text-transform: uppercase;
+}
+
+.fieldset {
+    color: $primary-color;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.928571px;
+    margin: 3rem 0 1.6rem 0;
+
+    & > p {
+        margin-left: 0.5rem;
+    }
+}
+
+.inputWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.214286px;
+    margin: 1rem 0.8rem 1rem 0.5rem;
+
+    &.fullwidth {
+        width: 100%;
+    }
+
+    &.halfwidth {
+        width: 47%;
+    }
+
+    &.radiowidth {
+        width: 8%;
+    }
+}
+
+.textInput {
+    background: $white;
+    border: 1px solid #cfcfcf;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 56px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.25px;
+    margin-top: 6px;
+    padding-left: 1.5rem;
+    width: 100%;
+}
+
+.radioContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.214286px;
+    margin: 1rem 0.8rem 1rem 0.5rem;
+
+    & > div {
+        width: 46%;
+    }
+}
+
+.radioButton {
+    background: $white;
+    border: 1px solid $primary-color;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 56px;
+    margin-bottom: 1rem;
+}
+
+.radioText {
+    color: $black;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.25px;
+    margin-left: 0.5rem;
+}

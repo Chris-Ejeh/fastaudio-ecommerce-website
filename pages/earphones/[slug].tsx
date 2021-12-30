@@ -1,12 +1,16 @@
+import { useReactiveVar } from '@apollo/client';
 import { FC } from 'react';
 
+import { storeRoutePath } from '../../apollo/apollo-cache';
 import Layout from '../../components/Layout';
 import ProductSinglePage from '../../components/ProductSinglePage/ProductSinglePage';
 import { menuItems } from '../../seed-data';
 import { getCategories, getFeaturedProduct, getProduct } from '../../utils/HelperFunctions';
 
 const earphones: FC = () => {
-    const product = getProduct();
+    const pathname = useReactiveVar(storeRoutePath);
+
+    const product = getProduct(pathname);
     const blockInfos = getCategories();
     const featuredProduct = getFeaturedProduct();
 

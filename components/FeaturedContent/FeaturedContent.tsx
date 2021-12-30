@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
-import { getProducts } from '../../utils/HelperFunctions';
-import { ButtonColors, ProductType } from '../../utils/types';
+import { storeRoutePath } from '../../apollo/apollo-cache';
+import { ButtonColors, PathnameType } from '../../utils/types';
 import Button from '../Button/Button';
 const cn = require('classnames');
 
@@ -17,42 +16,35 @@ interface IHomepage {
     pathname: string;
 }
 
-export const FirstContent: FC<IHomepage> = ({ name, description, desktopImage }) => {
-    const products = getProducts(ProductType.Speakers);
+export const FirstContent: FC<IHomepage> = ({ name, description, desktopImage, pathname }) => {
+    const router = useRouter();
 
     return (
         <div className={styles.container}>
-            {products.map((product, index) => {
-                if (product.slug === 'zx9-speaker') {
-                    return (
-                        <div className={styles.firstContainer} key={index}>
-                            <div className={styles.firstImage}>
-                                <Image src={desktopImage} width="410" height="473" alt={name} />
-                            </div>
-                            <div className={styles.firstInfo}>
-                                <h4 className={styles.name}>{name}</h4>
-                                <p className={styles.description}>{description}</p>
-                                <Link
-                                    href={{
-                                        pathname: `/speakers/[slug]`,
-                                        query: { slug: product.slug },
-                                    }}
-                                    passHref
-                                >
-                                    <a>
-                                        <p>See Product</p>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    );
-                }
-            })}
+            <div className={styles.firstContainer}>
+                <div className={styles.firstImage}>
+                    <Image src={desktopImage} width="410" height="473" alt={name} />
+                </div>
+                <div className={styles.firstInfo}>
+                    <h4 className={styles.name}>{name}</h4>
+                    <p className={styles.description}>{description}</p>
+                    <Button
+                        title="See product"
+                        buttonColor={ButtonColors.PrimaryColor}
+                        className={styles.button}
+                        onClick={() => {
+                            router.push(`${PathnameType.Speaker}/${pathname}/`);
+                            storeRoutePath(pathname);
+                        }}
+                        type="button"
+                    />
+                </div>
+            </div>
         </div>
     );
 };
 
-export const SecondContent: FC<IHomepage> = ({ name, description, desktopImage }) => {
+export const SecondContent: FC<IHomepage> = ({ name, description, desktopImage, pathname }) => {
     const router = useRouter();
 
     return (
@@ -80,14 +72,18 @@ export const SecondContent: FC<IHomepage> = ({ name, description, desktopImage }
                     title="See product"
                     buttonColor={ButtonColors.PrimaryColor}
                     className={styles.button}
-                    onClick={() => router.push(`/speakers/zx9-speaker`)}
+                    onClick={() => {
+                        router.push(`${PathnameType.Speaker}/${pathname}/`);
+                        storeRoutePath(pathname);
+                    }}
+                    type="button"
                 />
             </div>
         </div>
     );
 };
 
-export const ThirdContent: FC<IHomepage> = ({ name, description, desktopImage }) => {
+export const ThirdContent: FC<IHomepage> = ({ name, description, desktopImage, pathname }) => {
     const router = useRouter();
 
     return (
@@ -102,7 +98,11 @@ export const ThirdContent: FC<IHomepage> = ({ name, description, desktopImage })
                         title="See product"
                         buttonColor={ButtonColors.PrimaryColor}
                         className={styles.button}
-                        onClick={() => router.replace(`/earphones/yx1-earphones`)}
+                        onClick={() => {
+                            router.push(`${PathnameType.Speaker}/${pathname}/`);
+                            storeRoutePath(pathname);
+                        }}
+                        type="button"
                     />
                 </div>
             </div>

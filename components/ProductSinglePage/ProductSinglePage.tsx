@@ -1,5 +1,5 @@
 import { NextRouter, withRouter } from 'next/router';
-import { FC, useContext, useEffect } from 'react';
+import { FC, useContext } from 'react';
 
 import { cartMutation } from '../../apollo';
 import { AppContext } from '../../context/AppContext';
@@ -25,9 +25,10 @@ interface ProductSinglePageProps extends WithRouterProps {
     featuredProduct: IFeaturedData[];
 }
 
-const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, product, featuredProduct, router }) => {
+const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, featuredProduct, product, router }) => {
     const { setCartOpen } = useContext(AppContext);
     const { count, negativeHandler, positiveHandler, resetCount } = CartCounter();
+
     const getItem = getCarItems(product, count);
 
     const handleCart = () => {
@@ -36,14 +37,15 @@ const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, product, fe
         resetCount();
     };
 
-    useEffect(() => {
-        router.prefetch(`${router.asPath}`);
-    }, []);
-
     return (
         <>
             <div className={'container'}>
-                <Button buttonColor={ButtonColors.backButton} title="Go Back" onClick={() => router.back()} />
+                <Button
+                    buttonColor={ButtonColors.backButton}
+                    title="Go Back"
+                    onClick={() => router.back()}
+                    type="button"
+                />
 
                 <div>
                     <Product
