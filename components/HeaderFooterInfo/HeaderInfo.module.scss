@@ -7,14 +7,14 @@
 
 .headerContainer {
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 80% bottom;
-    background-color: $dark-grey;
-    margin-top: -6rem;
-    height: 650px;
+    background-size: cover;
+    background-position: center 100%;
+    margin-top: -15rem;
+    height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 5rem;
 }
 
 .headerInfo {
@@ -88,4 +88,10 @@
     line-height: 44px;
     letter-spacing: 1.42857px;
     text-transform: uppercase;
+}
+
+.button {
+    &:hover {
+        background-color: $secondary-color;
+    }
 }

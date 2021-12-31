@@ -1,11 +1,13 @@
 import { useReactiveVar } from '@apollo/client';
+import { cartMutation } from 'apollo';
 import { FormStore, storeCartItem } from 'apollo/apollo-cache';
+import { CartItems } from 'apollo/cart/createCartItem';
 import Button from 'components/Button/Button';
 import { AppContext } from 'context/AppContext';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { FC, useContext } from 'react';
-import { calcTotalPrice, formatMoney } from 'utils/HelperFunctions';
+import { FC, useContext, useEffect, useState } from 'react';
+import { calcTotalPrice, changeName, formatMoney } from 'utils/HelperFunctions';
 import { ButtonColors } from 'utils/types';
 
 import styles from './ComplementCard.module.scss';
@@ -14,9 +16,39 @@ const cn = require('classnames');
 
 const ComplementCard: FC = () => {
     const router = useRouter();
+    const [otherItem, setOtherItem] = useState([] as CartItems);
+    const [buttonTitle, setButtonTitle] = useState('');
     const { formOpen, closeForm } = useContext(AppContext);
     const cartItems = useReactiveVar(storeCartItem);
     const formData = useReactiveVar(FormStore);
+
+    useEffect(() => {
+        if (cartItems.length <= 1) {
+            setOtherItem(cartItems);
+            setButtonTitle('');
+        } else if (cartItems.length === 2) {
+            setOtherItem([cartItems[0]]);
+            setButtonTitle(`and ${cartItems.length - 1} other item`);
+        } else {
+            setOtherItem([cartItems[0]]);
+            setButtonTitle(`and ${cartItems.length - 1} other items`);
+        }
+    }, []);
+
+    const handleClick = () => {
+        if (buttonTitle !== 'View less') {
+            setOtherItem(cartItems);
+            setButtonTitle('View less');
+        } else {
+            if (cartItems.length === 2) {
+                setOtherItem([cartItems[0]]);
+                setButtonTitle(`and ${cartItems.length - 1} other item`);
+            } else {
+                setOtherItem([cartItems[0]]);
+                setButtonTitle(`and ${cartItems.length - 1} other items`);
+            }
+        }
+    };
 
     return !formOpen ? null : (
         <div className={cn(styles.container)}>
@@ -28,22 +60,36 @@ const ComplementCard: FC = () => {
 
                 <div className={styles.cartItemContainer}>
                     <div className={styles.cartItem}>
-                        <div className={styles.item}>
-                            <Image src={cartItems[0].image} alt={cartItems[0].productName} width={50} height={50} />
-                            <div className={styles.titleContainer}>
-                                <h5 className={styles.itemName}>{cartItems[0].productName}</h5>
-                                <p className={styles.price}>${cartItems[0].price}</p>
+                        {otherItem.map((item, index) => (
+                            <div className={styles.item} key={index}>
+                                <Image src={item.image} alt={item.productName} width={50} height={50} />
+                                <div className={styles.titleContainer}>
+                                    <h5 className={styles.itemName}>{changeName(item.productName)}</h5>
+                                    <p className={styles.price}>${item.price}</p>
+                                </div>
+                                <p className={styles.quantity}>x{item.quantity}</p>
                             </div>
-                            <p className={styles.quantity}>x{cartItems[0].quantity}</p>
-                        </div>
+                        ))}
 
-                        <div>
-                            {cartItems.length <= 1 ? null : cartItems.length === 2 ? (
-                                <p className={styles.count}>{`and ${cartItems.length - 1} other item`}</p>
-                            ) : (
-                                <p className={styles.count}>{`and ${cartItems.length - 1} other items`}</p>
-                            )}
-                        </div>
+                        {cartItems.length >= 2 && (
+                            <div>
+                                {cartItems.length <= 1 ? null : cartItems.length === 2 ? (
+                                    <Button
+                                        className={styles.count}
+                                        buttonColor={ButtonColors.countButton}
+                                        title={buttonTitle}
+                                        onClick={handleClick}
+                                    />
+                                ) : (
+                                    <Button
+                                        className={styles.count}
+                                        buttonColor={ButtonColors.countButton}
+                                        title={buttonTitle}
+                                        onClick={handleClick}
+                                    />
+                                )}
+                            </div>
+                        )}
                     </div>
 
                     <div className={styles.totalContainer}>
@@ -58,6 +104,7 @@ const ComplementCard: FC = () => {
                     onClick={() => {
                         router.push('/');
                         closeForm();
+                        cartMutation.deleteCart();
                     }}
                 />
             </div>

@@ -44,6 +44,10 @@
 
     .button {
         background-color: $black;
+
+        &:hover {
+            background-color: $button-grey;
+        }
     }
 }
 
@@ -76,6 +80,12 @@
         background-color: transparent;
         border: $black 1px solid;
         color: $black;
+        margin-top: 1rem;
+
+        &:hover {
+            background-color: $dark-grey;
+            color: $white;
+        }
     }
 }
 
@@ -101,7 +111,7 @@
         background-color: $grey;
         border-radius: 8px;
         height: 320px;
-        width: 540px;
+        width: 570px;
         margin-left: 1rem;
     }
 
@@ -109,6 +119,12 @@
         background-color: transparent;
         border: $black 1px solid;
         color: $black;
+        margin-top: 1rem;
+
+        &:hover {
+            background-color: $dark-grey;
+            color: $white;
+        }
     }
 }
 

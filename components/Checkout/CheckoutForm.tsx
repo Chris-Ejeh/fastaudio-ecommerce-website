@@ -1,15 +1,20 @@
 import { FormStore } from 'apollo/apollo-cache';
+import Button from 'components/Button/Button';
 import CartLayout from 'components/Cart/CartLayout';
 import { AppContext } from 'context/AppContext';
+import { useRouter } from 'next/router';
 import { FC, FormEvent, useContext } from 'react';
-import { CartLayoutType } from 'utils/types';
+import { ButtonColors, CartLayoutType } from 'utils/types';
 import useForm from 'utils/useForm';
 
 import styles from './CheckoutForm.module.scss';
 import Form from './Form';
 
+const cn = require('classnames');
+
 const CheckoutForm: FC = () => {
     const { setFormOpen } = useContext(AppContext);
+    const router = useRouter();
 
     const { inputs, handleChange, resetForm } = useForm({
         address: '',
@@ -32,8 +37,14 @@ const CheckoutForm: FC = () => {
     };
 
     return (
-        <div className={'container'}>
-            <h1 className={styles.checkout}>Checkout</h1>
+        <div className={cn('container', styles.wrapper)}>
+            <Button
+                buttonColor={ButtonColors.backButton}
+                className={styles.button}
+                title="Go Back"
+                onClick={() => router.back()}
+                type="button"
+            />
             <Form inputs={inputs} handleChange={handleChange} onSubmit={handleSubmit}>
                 <CartLayout cartType={CartLayoutType.Checkout} />
             </Form>

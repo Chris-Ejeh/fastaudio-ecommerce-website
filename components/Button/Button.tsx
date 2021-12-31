@@ -19,6 +19,7 @@ const Button: FC<ButtonProps> = ({ title, type, className, buttonColor, onClick,
             type={type}
             // eslint-disable-next-line prettier/prettier
             onClick={onClick}
+            // eslint-disable-next-line prettier/prettier
             onSubmit={onSubmit}
         >
             {title}

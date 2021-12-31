@@ -51,6 +51,10 @@
     letter-spacing: 1px;
     mix-blend-mode: normal;
     opacity: 0.5;
+
+    &:hover {
+        color: $primary-color;
+    }
 }
 
 .icon {

@@ -1,20 +1,34 @@
 @import '../../styles/shared/color.scss';
 
+.wrapper {
+    margin-top: -6rem;
+}
+
 .checkoutContainer {
     display: flex;
     justify-content: space-between;
 }
 
-.formContainer {
-    border: 0.3rem darkgrey solid;
+.formContainer,
+.cartContainer {
+    background-color: $white;
+    border-radius: 8px;
     padding: 2rem;
+}
+
+.formContainer {
     width: 750px;
+    margin-bottom: 7rem;
 }
 
 .cartContainer {
-    border: 0.3rem darkgrey solid;
-    padding: 2rem;
+    height: fit-content;
     width: 350px;
+}
+
+.button {
+    background-color: $grey;
+    margin-top: 6rem;
 }
 
 .checkout {
@@ -84,6 +98,10 @@
     margin-top: 6px;
     padding-left: 1.5rem;
     width: 100%;
+
+    &:focus {
+        outline: $primary-color solid 1px;
+    }
 }
 
 .radioContainer {
@@ -122,4 +140,8 @@
     line-height: 19px;
     letter-spacing: -0.25px;
     margin-left: 0.5rem;
+}
+
+.radioOutline {
+    cursor: pointer;
 }

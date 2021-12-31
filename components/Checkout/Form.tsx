@@ -15,6 +15,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
         <form onSubmit={onSubmit}>
             <div className={styles.checkoutContainer}>
                 <div className={styles.formContainer}>
+                    <h1 className={styles.checkout}>Checkout</h1>
                     <div className={styles.fieldset}>
                         <p>Billing Details</p>
 
@@ -113,6 +114,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                             <div>
                                 <div className={styles.radioButton}>
                                     <TextInput
+                                        className={styles.radioOutline}
                                         type="radio"
                                         name="payment"
                                         InputWidth={TextWidthType.radioWidth}
@@ -123,6 +125,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                                 </div>
                                 <div className={styles.radioButton}>
                                     <TextInput
+                                        className={styles.radioOutline}
                                         type="radio"
                                         name="payment"
                                         InputWidth={TextWidthType.radioWidth}

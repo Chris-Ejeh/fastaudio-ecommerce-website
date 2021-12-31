@@ -6,7 +6,7 @@ import { AppContext } from 'context/AppContext';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { FC, MouseEventHandler, useContext } from 'react';
-import { calcTotalPrice, formatMoney } from 'utils/HelperFunctions';
+import { calcGrandTotal, calcTaxes, calcTotalPrice, changeName, formatMoney } from 'utils/HelperFunctions';
 import { ButtonColors, PathnameType } from 'utils/types';
 
 import styles from './Cart.module.scss';
@@ -50,7 +50,7 @@ const CartLayout: FC<CartLayoutProps> = ({ cartType, onClick }) => {
                         <div className={styles.imageTextContainer}>
                             <Image src={image} width="64" height="64" objectFit="contain" alt={productName} />
                             <div className={styles.cartInfo}>
-                                <h3 className={styles.name}>{productName}</h3>
+                                <h3 className={styles.name}>{changeName(productName)}</h3>
                                 <p className={styles.price}>${formatMoney(price)}</p>
                             </div>
                         </div>
@@ -69,16 +69,18 @@ const CartLayout: FC<CartLayoutProps> = ({ cartType, onClick }) => {
                 <>
                     <div className={styles.totalContainer}>
                         <p className={styles.totalText}>Shipping</p>
-                        <p className={styles.totalPrice}>${formatMoney(calcTotalPrice(cartItems))}</p>
+                        <p className={styles.totalPrice}>$50</p>
                     </div>
                     <div className={styles.totalContainer}>
-                        <p className={styles.totalText}>Vat (Included) </p>
-                        <p className={styles.totalPrice}>${formatMoney(calcTotalPrice(cartItems))}</p>
+                        <p className={styles.totalText}>Tax (Included) </p>
+                        <p className={styles.totalPrice}>${formatMoney(calcTaxes(calcTotalPrice(cartItems), 50))}</p>
                     </div>
 
                     <div className={styles.grandTotalContainer}>
                         <p className={styles.totalText}>Grand Total</p>
-                        <p className={styles.totalPrice}>${formatMoney(calcTotalPrice(cartItems))}</p>
+                        <p className={styles.totalPrice}>
+                            ${formatMoney(calcGrandTotal(calcTotalPrice(cartItems), 50))}
+                        </p>
                     </div>
                 </>
             )}

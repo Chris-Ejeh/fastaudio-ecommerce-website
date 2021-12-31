@@ -39,6 +39,7 @@ const AppProvider: FC = ({ children }) => {
                 closeCart,
                 closeForm,
                 setCartItem,
+                // eslint-disable-next-line prettier/prettier
             }}
         >
             {children}

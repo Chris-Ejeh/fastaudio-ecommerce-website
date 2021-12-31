@@ -51,7 +51,7 @@
     display: flex;
     justify-content: center;
     width: 444px;
-    height: 140px;
+    height: fit-content;
     margin: 10px 0 30px;
 }
 
@@ -61,7 +61,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 3rem 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -73,7 +73,9 @@
 }
 
 .titleContainer {
+    margin-right: 3rem;
     margin-left: 1rem;
+    width: 5rem;
 }
 
 .itemName {
@@ -93,17 +95,27 @@
 }
 
 .quantity {
-    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: right;
+    mix-blend-mode: normal;
+    opacity: 0.5;
 }
 
 .count {
     margin-top: 0;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
     letter-spacing: -0.214286px;
     mix-blend-mode: normal;
     opacity: 0.5;
+    text-transform: none;
+
+    &:hover {
+        color: $primary-color;
+    }
 }
 
 .totalContainer {
@@ -113,7 +125,7 @@
     align-items: flex-start;
     background-color: $black;
     color: $white;
-    padding: 0.5rem 2rem 0.5rem 2rem;
+    padding: 0.5rem 3rem 0.5rem 2rem;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -124,7 +136,7 @@
     line-height: 25px;
     mix-blend-mode: normal;
     opacity: 0.5;
-    margin: 0;
+    margin-bottom: 0.5rem;
 }
 
 .total {
@@ -133,5 +145,5 @@
     line-height: 25px;
     text-align: right;
     text-transform: uppercase;
-    margin: 0;
+    margin-top: 0.5rem;
 }

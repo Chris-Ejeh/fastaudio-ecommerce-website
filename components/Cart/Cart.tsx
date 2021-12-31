@@ -26,6 +26,22 @@ const Cart: FC = () => {
                             type="button"
                         />
                     </div>
+                ) : cartItems.length === 1 ? (
+                    <div className={cn('container', styles.modalOne, styles.modal)}>
+                        <CartLayout cartType={CartLayoutType.Cart} />
+                    </div>
+                ) : cartItems.length === 2 ? (
+                    <div className={cn('container', styles.modalTwo, styles.modal)}>
+                        <CartLayout cartType={CartLayoutType.Cart} />
+                    </div>
+                ) : cartItems.length === 3 ? (
+                    <div className={cn('container', styles.modalThree, styles.modal)}>
+                        <CartLayout cartType={CartLayoutType.Cart} />
+                    </div>
+                ) : cartItems.length === 4 ? (
+                    <div className={cn('container', styles.modalFour, styles.modal)}>
+                        <CartLayout cartType={CartLayoutType.Cart} />
+                    </div>
                 ) : (
                     <div className={cn('container', styles.modalMain, styles.modal)}>
                         <CartLayout cartType={CartLayoutType.Cart} />

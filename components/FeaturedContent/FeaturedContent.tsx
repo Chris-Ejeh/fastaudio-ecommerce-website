@@ -88,7 +88,7 @@ export const ThirdContent: FC<IHomepage> = ({ name, description, desktopImage, p
 
     return (
         <div className={styles.thirdContainer}>
-            <Image src={desktopImage} width="540" height="320" alt={name} className={styles.image} />
+            <Image src={desktopImage} width="570" height="320" alt={name} className={styles.image} />
 
             <div className={styles.infoContainer}>
                 <div>

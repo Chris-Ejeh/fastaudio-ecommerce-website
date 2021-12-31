@@ -1,6 +1,6 @@
 import { CartItems } from '../apollo/cart/createCartItem';
 import { products } from './../seed-data';
-import { IProducts, ProductType } from './types';
+import { IProducts, ProductNameType, ProductType } from './types';
 
 export const getProducts = (productCategory: ProductType | string) => {
     return products.filter((items) => {
@@ -65,6 +65,7 @@ export const getHomepageHeader = (productName: string) => {
         return {
             id: header.id,
             name: header.name,
+            slug: header.slug,
             description:
                 'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.',
             newProduct: header.newProduct,
@@ -88,6 +89,51 @@ export const calcTotalPrice = (cart: CartItems): number => {
         if (!cartItem) return tally; // products can be deleted, but they could still be in your cart
         return tally + cartItem.quantity * cartItem.price;
     }, 0);
+};
+
+export const calcTaxes = (total: number, shipping: number) => {
+    return (total + shipping) * 0.15;
+};
+
+export const calcGrandTotal = (total: number, shipping: number) => {
+    return total + shipping;
+};
+
+export const changeName = (items: string) => {
+    switch (items) {
+        case ProductNameType.XX59_HEADPHONES:
+            if (items === ProductNameType.XX59_HEADPHONES) {
+                return 'XX59';
+            }
+            break;
+        case ProductNameType.XX99_MARK_II_HEADPHONES:
+            if (items === ProductNameType.XX99_MARK_II_HEADPHONES) {
+                return 'XX99 MK II';
+            }
+            break;
+        case ProductNameType.XX99_MARK_I_HEADPHONES:
+            if (items === ProductNameType.XX99_MARK_I_HEADPHONES) {
+                return 'XX99 MK I';
+            }
+            break;
+        case ProductNameType.YX1_WIRELESS_EARPHONES:
+            if (items === ProductNameType.YX1_WIRELESS_EARPHONES) {
+                return 'YX1';
+            }
+            break;
+        case ProductNameType.ZX7_SPEAKER:
+            if (items === ProductNameType.ZX7_SPEAKER) {
+                return 'ZX7';
+            }
+            break;
+        case ProductNameType.ZX9_SPEAKER:
+            if (items === ProductNameType.ZX9_SPEAKER) {
+                return 'ZX9';
+            }
+            break;
+        default:
+            break;
+    }
 };
 
 export const getCarItems = (

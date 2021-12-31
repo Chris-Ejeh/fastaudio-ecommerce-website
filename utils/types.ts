@@ -46,6 +46,15 @@ export enum CartLayoutType {
     Checkout = 'checkout',
 }
 
+export enum ProductNameType {
+    YX1_WIRELESS_EARPHONES = 'YX1 Wireless Earphones',
+    ZX7_SPEAKER = 'ZX7 Speaker',
+    ZX9_SPEAKER = 'ZX9 Speaker',
+    XX59_HEADPHONES = 'XX59 Headphones',
+    XX99_MARK_I_HEADPHONES = 'XX99 Mark I Headphones',
+    XX99_MARK_II_HEADPHONES = 'XX99 Mark II Headphones',
+}
+
 export interface IProducts {
     id: number;
     slug: string;
@@ -126,6 +135,7 @@ export interface ProductPathProps {
 export interface IHomepageHeaderProps {
     id: number;
     name: string;
+    slug: string;
     description: string;
     newProduct: boolean;
 }

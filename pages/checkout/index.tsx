@@ -7,7 +7,9 @@ import { menuItems } from '../../seed-data';
 const checkout: FC = () => {
     return (
         <Layout menus={menuItems}>
-            <CheckoutForm />
+            <div style={{ backgroundColor: '#f1f1f1' }}>
+                <CheckoutForm />
+            </div>
         </Layout>
     );
 };

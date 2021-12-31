@@ -1,3 +1,4 @@
+import { storeRoutePath } from 'apollo/apollo-cache';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
@@ -41,7 +42,11 @@ const HomePageHeader: FC<HomePageHeaderProps> = ({ product }) => {
                                 <Button
                                     title="See Product"
                                     buttonColor={ButtonColors.PrimaryColor}
-                                    onClick={() => router.push(`headphones/${encodeURIComponent(product.id)}`)}
+                                    className={styles.button}
+                                    onClick={() => {
+                                        router.push(`headphones/${encodeURIComponent(product.slug)}`);
+                                        storeRoutePath(product.slug);
+                                    }}
                                     type="button"
                                 />
                             )}

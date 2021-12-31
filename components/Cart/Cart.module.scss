@@ -26,11 +26,27 @@
 }
 
 .modalEmpty {
-    top: 23%;
+    top: 21%;
+}
+
+.modalOne {
+    top: 29%;
+}
+
+.modalTwo {
+    top: 33%;
+}
+
+.modalThree {
+    top: 37%;
+}
+
+.modalFour {
+    top: 41%;
 }
 
 .modalMain {
-    top: 40%;
+    top: 45%;
 }
 
 .cartHeader {
@@ -76,7 +92,7 @@
 }
 
 .cartInfo {
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 .name {
@@ -84,7 +100,6 @@
     font-size: 15px;
     line-height: 25px;
     text-transform: uppercase;
-    width: 50%;
     margin: 0;
 }
 
