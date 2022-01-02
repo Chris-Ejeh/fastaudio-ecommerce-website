@@ -1,7 +1,9 @@
 @import '../../styles/shared/color.scss';
+@import '../../styles/shared/mixin.scss';
 
 .nav {
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -13,7 +15,7 @@
             content: '';
             opacity: 0.2;
             width: 98%;
-            top: 107px;
+            top: 100px;
             left: 0.5rem;
             position: absolute;
             border-top: 1px solid white;
@@ -21,15 +23,34 @@
     }
 }
 
+.drawer {
+    display: contents;
+
+    @include respond-to('medium') {
+        display: none;
+    }
+}
+
 .logo {
-    cursor: pointer;
     height: 25px;
     width: 143px;
+
+    @include respond-to('small') {
+        margin-right: 25rem;
+    }
+
+    @include respond-to('medium') {
+        margin-right: 0;
+    }
 }
 
 .navItems {
-    display: flex;
-    margin-right: 6rem;
+    display: none;
+
+    @include respond-to('medium') {
+        display: flex;
+        margin-right: 6rem;
+    }
 }
 
 .navItem {
@@ -53,6 +74,5 @@
 .cartButton {
     background: none;
     border: none;
-    cursor: pointer;
     outline: none;
 }

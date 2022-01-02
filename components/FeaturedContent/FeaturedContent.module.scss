@@ -1,5 +1,6 @@
 @import '../../styles/shared/color.scss';
 @import '../../styles/shared/background.scss';
+@import '../../styles//shared/mixin.scss';
 
 .firstContainer,
 .secondContainer,
@@ -9,7 +10,6 @@
     position: relative;
 }
 
-.firstInfo,
 .secondInfo,
 .thirdInfo {
     flex: 0 0 30%;
@@ -20,40 +20,128 @@
     margin-bottom: 1rem;
     justify-content: space-between;
     align-items: center;
-    background: url($featuredBackground) $primary-color no-repeat left -8rem top 20%;
-    height: 560px;
+    flex-direction: column;
+    background-color: $primary-color;
+    background-image: url($featuredBackground);
+    background-repeat: no-repeat;
+    background-position: left 50% bottom 280%;
+    background-size: 170%;
+    height: 600px;
     z-index: 1;
     color: $white;
     position: relative;
     overflow: hidden;
 
+    @include respond-to('phonePlus') {
+        background-position: left 50% top 650%;
+        background-size: 170%;
+    }
+
+    @include respond-to('small') {
+        background-position: right 50% top 130%;
+        background-size: 140%;
+        height: 720px;
+        flex-direction: column;
+    }
+
+    @include respond-to('medium') {
+        background: url($featuredBackground) $primary-color no-repeat left -8rem top 20%;
+        height: 560px;
+        flex-direction: row;
+    }
+
     .name {
-        font-size: 56px;
-        line-height: 58px;
-        letter-spacing: 2px;
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: 1.28px;
+        text-align: center;
+        width: 50%;
+
+        @include respond-to('small') {
+            font-size: 56px;
+            line-height: 58px;
+            letter-spacing: 2px;
+            width: fit-content;
+            width: 40%;
+        }
+
+        @include respond-to('medium') {
+            width: fit-content;
+            text-align: justify;
+        }
     }
 
     .description {
         font-size: 15px;
         line-height: 25px;
-        font-weight: 200;
+        font-weight: 500;
         mix-blend-mode: normal;
         opacity: 0.75;
         margin-bottom: 2rem;
+        width: 90%;
+        text-align: center;
+
+        @include respond-to('small') {
+            width: fit-content;
+            width: 50%;
+        }
+
+        @include respond-to('medium') {
+            width: fit-content;
+            text-align: justify;
+        }
     }
 
     .button {
         background-color: $black;
+        width: 60%;
 
         &:hover {
             background-color: $button-grey;
+        }
+
+        @include respond-to('small') {
+            width: 25%;
+        }
+
+        @include respond-to('medium') {
+            width: fit-content;
         }
     }
 }
 
 .firstImage {
-    margin-left: 10rem;
-    margin-top: 8rem;
+    margin-top: 4rem;
+    height: 207px;
+    width: 172px;
+
+    @include respond-to('small') {
+        height: 237px;
+        width: 197.21px;
+    }
+
+    @include respond-to('medium') {
+        margin-top: 8rem;
+        margin-left: 10rem;
+        height: auto;
+        width: auto;
+    }
+}
+
+.firstInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    @include respond-to('medium') {
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        width: 30%;
+        margin-right: 7rem;
+    }
 }
 
 .secondContainer {
@@ -70,10 +158,19 @@
         font-size: 28px;
         line-height: 38px;
         letter-spacing: 2px;
+        margin-bottom: 1rem;
     }
 
     .infoContainer {
-        margin-left: 10rem;
+        margin-left: 2rem;
+
+        @include respond-to('small') {
+            margin-left: 5rem;
+        }
+
+        @include respond-to('medium') {
+            margin-left: 10rem;
+        }
     }
 
     .button {
@@ -81,10 +178,15 @@
         border: $black 1px solid;
         color: $black;
         margin-top: 1rem;
+        width: 80%;
 
         &:hover {
             background-color: $dark-grey;
             color: $white;
+        }
+
+        @include respond-to('small') {
+            width: fit-content;
         }
     }
 }
@@ -92,6 +194,11 @@
 .thirdContainer {
     justify-content: space-between;
     margin-bottom: 10rem;
+    flex-direction: column;
+
+    @include respond-to('small') {
+        flex-direction: row;
+    }
 
     .name {
         font-size: 28px;
@@ -110,9 +217,14 @@
         align-items: center;
         background-color: $grey;
         border-radius: 8px;
-        height: 320px;
-        width: 570px;
-        margin-left: 1rem;
+        height: 200px;
+        margin-top: 1rem;
+
+        @include respond-to('small') {
+            height: 320px;
+            width: 570px;
+            margin-left: 1rem;
+        }
     }
 
     .button {
@@ -120,6 +232,11 @@
         border: $black 1px solid;
         color: $black;
         margin-top: 1rem;
+        width: 70%;
+
+        @include respond-to('small') {
+            width: fit-content;
+        }
 
         &:hover {
             background-color: $dark-grey;

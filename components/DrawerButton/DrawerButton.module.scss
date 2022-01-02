@@ -1,0 +1,33 @@
+@import '../../styles/shared/color.scss';
+@import '../../styles/shared/mixin.scss';
+
+// .wrapper {
+//     align-items: center;
+//     cursor: pointer;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 1rem;
+// }
+
+.toggle {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 2.4rem;
+    width: 3rem;
+    border: none;
+    background: transparent;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: $primary-color;
+    }
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background: $white;
+    border-radius: 25%;
+}

@@ -34,13 +34,33 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                     </p>
                 </div>
 
-                <Image
-                    src="/images/shared/desktop/image-best-gear.jpg"
-                    width="540"
-                    height="588"
-                    alt="Bringing you the best audio gear"
-                    className={styles.image}
-                />
+                <div className={styles.desktopImage}>
+                    <Image
+                        src="/images/shared/desktop/image-best-gear.jpg"
+                        width="540"
+                        height="588"
+                        alt="Bringing you the best audio gear"
+                        className={styles.image}
+                    />
+                </div>
+                <div className={styles.tabletImage}>
+                    <Image
+                        src="/images/shared/tablet/image-best-gear.jpg"
+                        width="689"
+                        height="300"
+                        alt="Bringing you the best audio gear"
+                        className={styles.image}
+                    />
+                </div>
+                <div className={styles.mobileImage}>
+                    <Image
+                        src="/images/shared/mobile/image-best-gear.jpg"
+                        width="327"
+                        height="300"
+                        alt="Bringing you the best audio gear"
+                        className={styles.image}
+                    />
+                </div>
             </div>
         </div>
     );

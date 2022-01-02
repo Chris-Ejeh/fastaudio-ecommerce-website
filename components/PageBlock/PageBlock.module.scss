@@ -1,34 +1,67 @@
 @import '../../styles/shared/color.scss';
+@import '../../styles//shared/mixin.scss';
 
 .pageBlockContainer {
     padding: 6rem 0 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include respond-to('small') {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 .categoryContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+
+    @include respond-to('small') {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .locationContainer {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-between;
-    align-items: center;
-    // margin-bottom: 10rem;
+    text-align: center;
+
+    @include respond-to('medium') {
+        align-items: center;
+        flex-direction: row;
+    }
 }
 
 .infoContainer {
-    flex: 0 0 40%;
     color: $black;
+    width: 90%;
+
+    @include respond-to('small') {
+        align-self: center;
+        width: 90%;
+    }
+
+    @include respond-to('medium') {
+        width: 40%;
+    }
 }
 
 .pageTitle {
     font-weight: bold;
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 28px;
+    line-height: 38px;
     letter-spacing: 1.42857px;
     text-transform: uppercase;
     margin-bottom: 2rem;
+
+    @include respond-to('small') {
+        font-size: 40px;
+        line-height: 44px;
+        letter-spacing: 1.42857px;
+    }
 
     span {
         color: $primary-color;
@@ -45,6 +78,37 @@
 
 .image {
     border-radius: 8px;
+}
+
+.desktopImage {
+    display: none;
+    @include respond-to('large') {
+        display: contents;
+    }
+}
+
+.tabletImage {
+    display: none;
+
+    @include respond-to('small') {
+        display: contents;
+    }
+
+    @include respond-to('large') {
+        display: none;
+    }
+}
+
+.mobileImage {
+    display: contents;
+
+    @include respond-to('small') {
+        display: none;
+    }
+
+    @include respond-to('large') {
+        display: none;
+    }
 }
 
 .singlePageBlockContainer {

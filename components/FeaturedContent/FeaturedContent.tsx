@@ -13,6 +13,8 @@ interface IHomepage {
     name: string;
     description: string;
     desktopImage: string;
+    tabletImage?: string;
+    mobileImage?: string;
     pathname: string;
 }
 
@@ -20,46 +22,51 @@ export const FirstContent: FC<IHomepage> = ({ name, description, desktopImage, p
     const router = useRouter();
 
     return (
-        <div className={styles.container}>
-            <div className={styles.firstContainer}>
-                <div className={styles.firstImage}>
-                    <Image src={desktopImage} width="410" height="473" alt={name} />
-                </div>
-                <div className={styles.firstInfo}>
-                    <h4 className={styles.name}>{name}</h4>
-                    <p className={styles.description}>{description}</p>
-                    <Button
-                        title="See product"
-                        buttonColor={ButtonColors.PrimaryColor}
-                        className={styles.button}
-                        onClick={() => {
-                            router.push(`${PathnameType.Speaker}/${pathname}/`);
-                            storeRoutePath(pathname);
-                        }}
-                        type="button"
-                    />
-                </div>
+        <div className={cn('container', styles.firstContainer)}>
+            <div className={styles.firstImage}>
+                <Image src={desktopImage} width="410" height="473" alt={name} />
+            </div>
+            <div className={styles.firstInfo}>
+                <h4 className={styles.name}>{name}</h4>
+                <p className={styles.description}>{description}</p>
+                <Button
+                    title="See product"
+                    buttonColor={ButtonColors.PrimaryColor}
+                    className={styles.button}
+                    onClick={() => {
+                        router.push(`${PathnameType.Speaker}/${pathname}/`);
+                        storeRoutePath(pathname);
+                    }}
+                    type="button"
+                />
             </div>
         </div>
     );
 };
 
-export const SecondContent: FC<IHomepage> = ({ name, description, desktopImage, pathname }) => {
+export const SecondContent: FC<IHomepage> = ({
+    name,
+    description,
+    desktopImage,
+    tabletImage,
+    mobileImage,
+    pathname,
+}) => {
     const router = useRouter();
 
     return (
         <div className={cn(styles.secondContainer, 'backgroundImage')}>
             <style jsx={true}>{`
                 .backgroundImage {
-                    background-image: url(${desktopImage});
+                    background-image: url(${mobileImage});
                 }
                 @media (min-width: 768px) {
-                    .header {
-                        background-image: url(${desktopImage});
+                    .backgroundImage {
+                        background-image: url(${tabletImage});
                     }
                 }
-                @media (min-width: 1000px) {
-                    .header {
+                @media (min-width: 1020px) {
+                    .backgroundImage {
                         background-image: url(${desktopImage});
                     }
                 }

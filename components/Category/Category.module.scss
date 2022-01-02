@@ -1,10 +1,10 @@
 @import '../../styles/shared/color.scss';
 @import '../../styles/shared/background.scss';
+@import '../../styles//shared/mixin.scss';
 
 .container {
     background-color: $grey;
     height: 200px;
-    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -12,6 +12,11 @@
     border-radius: 8px;
     margin-bottom: 10rem;
     position: relative;
+
+    @include respond-to('small') {
+        width: 32%;
+        margin-bottom: 8rem;
+    }
 }
 
 .image {

@@ -1,4 +1,5 @@
 @import '../../styles/shared/color.scss';
+@import '../../styles/shared/mixin.scss';
 
 .headerContainer,
 .footerInfo {
@@ -9,20 +10,51 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 100%;
+    background-color: $headerBackground;
     margin-top: -15rem;
-    height: 900px;
+    height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 5rem;
+
+    @include respond-to('small') {
+        height: 800px;
+    }
+
+    @include respond-to('medium-large') {
+        background-repeat: repeat;
+        background-size: contain;
+        margin-top: -15rem;
+        height: 570px;
+    }
+
+    @include respond-to('large') {
+        height: 760px;
+    }
+
+    @include respond-to('extra-large') {
+        height: 980px;
+    }
 }
 
 .headerInfo {
     display: flex;
+    justify-content: center;
+    text-align: center;
+
+    @include respond-to('medium-large') {
+        justify-content: flex-start;
+        text-align: left;
+    }
 }
 
 .info {
-    flex-basis: 200px;
+    flex-basis: 300px;
+
+    @include respond-to('medium') {
+        flex-basis: 200px;
+    }
 }
 
 .footerInfo {
@@ -39,20 +71,27 @@
 }
 
 .headerTitle {
-    font-size: 56px;
-    line-height: 58px;
-    letter-spacing: 2px;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 1.269px;
     text-transform: uppercase;
     font-weight: bold;
     margin: 1.5rem 0;
+
+    @include respond-to('small') {
+        font-size: 56px;
+        line-height: 58px;
+        letter-spacing: 2px;
+    }
 }
 
 .headerDescription {
-    font-weight: 200;
+    font-weight: 500;
     font-size: 15px;
     line-height: 25px;
     mix-blend-mode: normal;
     opacity: 0.75;
+    margin: 2rem 0;
 }
 
 .footerDescription,

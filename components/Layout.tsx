@@ -6,6 +6,7 @@ import ComplementCard from './ComplementCard/ComplementCard';
 import Footer from './Footer/Footer';
 import Head from './Head';
 import Header from './Header/Header';
+import SideDrawer from './SideDrawer/SideDrawer';
 
 interface LayoutProps {
     children: ReactNode;
@@ -19,6 +20,7 @@ const Layout: FC<LayoutProps> = ({ children, menus }) => {
             <Header navItems={menus} />
             <Cart />
             <ComplementCard />
+            <SideDrawer navItems={menus} withCart={true} />
             <div className={'children-padding'}>{children}</div>
             <Footer navItems={menus} />
         </>

@@ -1,3 +1,4 @@
+import DrawerButton from 'components/DrawerButton/DrawerButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useContext } from 'react';
@@ -23,6 +24,10 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
                 // eslint-disable-next-line prettier/prettier
             })}
         >
+            <div className={styles.drawer}>
+                <DrawerButton />
+            </div>
+
             <div className={styles.logo}>
                 <Link href="/" passHref>
                     <a role="link">

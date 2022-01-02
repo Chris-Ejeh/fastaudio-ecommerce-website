@@ -4,7 +4,6 @@ import React from 'react';
 import { FC } from 'react';
 
 import { MenuItems } from '../../utils/types';
-import FooterInfo from '../HeaderFooterInfo/FooterInfo';
 import styles from './Footer.module.scss';
 const cn = require('classnames');
 
@@ -14,7 +13,7 @@ interface FooterProps {
 
 const Footer: FC<FooterProps> = ({ navItems }) => {
     return (
-        <nav className={styles.footer}>
+        <nav className={cn(styles.footer)}>
             <div className={cn('container', styles.footerContainer)}>
                 <div className={styles.footerNav}>
                     <div className={styles.logo}>
@@ -35,14 +34,25 @@ const Footer: FC<FooterProps> = ({ navItems }) => {
                 </div>
 
                 <div className={styles.footerInfo}>
-                    <FooterInfo
-                        footerDescription="Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week."
-                        copyRightTitle="Copyright 2021. All Rights Reserved"
-                    />
+                    <div className={styles.footerInfoContainer}>
+                        <p className={styles.footerDescription}>
+                            {` Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers
+                        and sound specialists who are devoted to helping you get the most out of personal audio. Come
+                        and visit our demo facility - we’re open 7 days a week.`}
+                        </p>
+                        <p className={styles.copyDescription}>Copyright 2021. All Rights Reserved</p>
+                    </div>
+
                     <div className={styles.socials}>
-                        <Image src="/svgs/icon-facebook.svg" width={24} height={24} />
-                        <Image src="/svgs/icon-twitter.svg" width={24} height={24} />
-                        <Image src="/svgs/icon-instagram.svg" width={24} height={24} />
+                        <div className={styles.img}>
+                            <Image src="/svgs/icon-facebook.svg" width={24} height={24} className={styles.img} />
+                        </div>
+                        <div className={styles.img}>
+                            <Image src="/svgs/icon-twitter.svg" width={24} height={24} className={styles.img} />
+                        </div>
+                        <div className={styles.img}>
+                            <Image src="/svgs/icon-instagram.svg" width={24} height={24} className={styles.img} />
+                        </div>
                     </div>
                 </div>
             </div>

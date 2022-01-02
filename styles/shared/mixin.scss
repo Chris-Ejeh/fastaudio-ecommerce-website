@@ -1,10 +1,11 @@
 $breakpoints: (
     'phone': 375px,
-    'phonePlus': 420px,
-    'small': 767px,
+    'phonePlus': 425px,
+    'small': 768px,
     'medium': 992px,
     'medium-large': 1024px,
     'large': 1200px,
+    'extra-large': 2560px,
 ) !default;
 
 $containerWidth: (

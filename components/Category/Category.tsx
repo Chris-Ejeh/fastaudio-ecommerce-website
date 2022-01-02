@@ -5,7 +5,6 @@ import { AiOutlineRight } from 'react-icons/ai';
 
 import { ICategories } from '../../utils/types';
 import styles from './Category.module.scss';
-
 interface ICategory {
     category: ICategories;
 }

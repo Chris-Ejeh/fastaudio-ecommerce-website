@@ -7,6 +7,8 @@ import Button from '../Button/Button';
 import styles from './HeaderInfo.module.scss';
 const cn = require('classnames');
 const desktopImage = '/images/home/desktop/image-hero.jpg';
+const tabletImage = '/images/home/tablet/image-header.jpg';
+const mobileImage = '/images/home/mobile/image-header.jpg';
 
 export interface HomePageHeaderProps {
     product: IHomepageHeaderProps;
@@ -20,14 +22,14 @@ const HomePageHeader: FC<HomePageHeaderProps> = ({ product }) => {
                 <div className={cn(styles.headerContainer, 'header')}>
                     <style jsx={true}>{`
                         .header {
-                            background-image: url(${desktopImage});
+                            background-image: url(${mobileImage});
                         }
                         @media (min-width: 768px) {
                             .header {
-                                background-image: url(${desktopImage});
+                                background-image: url(${tabletImage});
                             }
                         }
-                        @media (min-width: 1000px) {
+                        @media (min-width: 1020px) {
                             .header {
                                 background-image: url(${desktopImage});
                             }

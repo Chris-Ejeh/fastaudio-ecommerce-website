@@ -28,6 +28,8 @@ const HomePage: FC<HomePageProps> = ({ blockInfos, homepageHeader }) => {
                     name="ZX7 SPEAKER"
                     description=""
                     desktopImage="/images/home/desktop/image-speaker-zx7.jpg"
+                    tabletImage="/images/home/tablet/image-speaker-zx7.jpg"
+                    mobileImage="/images/home/mobile/image-speaker-zx7.jpg"
                     pathname="zx7-speaker"
                 />
 

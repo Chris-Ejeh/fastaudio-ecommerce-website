@@ -11,7 +11,7 @@ interface FooterInfoProps {
 
 const FooterInfo: FC<FooterInfoProps> = ({ footerDescription, copyRightTitle, className }) => {
     return (
-        <div className={cn(styles.footerInfo, className)}>
+        <div className={cn(className)}>
             <p className={styles.footerDescription}>{footerDescription}</p>
             <p className={styles.copyDescription}>{copyRightTitle}</p>
         </div>
