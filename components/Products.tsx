@@ -20,20 +20,23 @@ const Products: FC<IProductsProps> = ({ blockInfos, products }) => {
         <>
             <ProductHeader productName={router.pathname} />
 
-            <div className={'container'} style={{ display: 'flex', flexDirection: 'column-reverse' }}>
+            <div>
                 {products.map((product, index) => {
                     return (
                         <Product
                             key={index}
                             altText={product.name}
                             isNewProduct={product.newProduct}
-                            image={product.image.desktop}
+                            desktopImage={product.categoryPreviewImage.desktop}
+                            tabletImage={product.categoryPreviewImage.tablet}
+                            mobileImage={product.categoryPreviewImage.mobile}
                             productName={product.name}
                             // eslint-disable-next-line prettier/prettier
                             productDescription={product.description}
                         >
                             <Button
                                 title="See Product"
+                                className="button"
                                 buttonColor={ButtonColors.PrimaryColor}
                                 onClick={() => {
                                     router.push(`${router.pathname}/${encodeURIComponent(product.slug)}`);
@@ -45,6 +48,7 @@ const Products: FC<IProductsProps> = ({ blockInfos, products }) => {
                     );
                 })}
             </div>
+
             <PageBlock blockInfos={blockInfos} />
         </>
     );

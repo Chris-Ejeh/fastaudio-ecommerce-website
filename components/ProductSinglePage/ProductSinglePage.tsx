@@ -1,19 +1,15 @@
+import SingleProduct from 'components/SingleProduct/SingleProduct';
 import { NextRouter, withRouter } from 'next/router';
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 
-import { cartMutation } from '../../apollo';
-import { AppContext } from '../../context/AppContext';
-import { CartCounter } from '../../utils/CartCounter';
-import { getCarItems } from '../../utils/HelperFunctions';
 import { ButtonColors, ICategories, IFeaturedData, IProducts } from '../../utils/types';
 import Button from '../Button/Button';
-import CountButton from '../Button/CountButton';
-import AddToCartButton from '../Cart/AddToCartButton';
 import PageBlock from '../PageBlock/PageBlock';
 import SinglePageBlock from '../PageBlock/SinglePageBlock';
-import Product from '../Product/Product';
 import ProductGallery from './ProductGallery';
 import styles from './ProductSinglePage.module.scss';
+
+const cn = require('classnames');
 
 interface WithRouterProps {
     router: NextRouter;
@@ -26,20 +22,9 @@ interface ProductSinglePageProps extends WithRouterProps {
 }
 
 const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, featuredProduct, product, router }) => {
-    const { setCartOpen } = useContext(AppContext);
-    const { count, negativeHandler, positiveHandler, resetCount } = CartCounter();
-
-    const getItem = getCarItems(product, count);
-
-    const handleCart = () => {
-        setCartOpen(true);
-        cartMutation.addCart(getItem.productName, getItem.productId, getItem.price, getItem.quantity, getItem.image);
-        resetCount();
-    };
-
     return (
         <>
-            <div className={'container'}>
+            <div className={cn('container', styles.container)}>
                 <Button
                     buttonColor={ButtonColors.backButton}
                     title="Go Back"
@@ -47,27 +32,7 @@ const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, featuredPro
                     type="button"
                 />
 
-                <div>
-                    <Product
-                        altText={product.name}
-                        image={product.image.desktop}
-                        isNewProduct={product.newProduct}
-                        hasCart
-                        productName={product.name}
-                        productDescription={product.description}
-                        // eslint-disable-next-line prettier/prettier
-                        productPrice={product.price}
-                    >
-                        <>
-                            <CountButton
-                                negativeClick={negativeHandler}
-                                positiveClick={positiveHandler}
-                                value={count}
-                            />
-                            <AddToCartButton addToCartClick={handleCart} />
-                        </>
-                    </Product>
-                </div>
+                <SingleProduct product={product} />
 
                 <div className={styles.productContent}>
                     <div className={styles.featuresContainer}>
@@ -95,8 +60,8 @@ const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, featuredPro
                         product={product}
                     />
                 </div>
+                <SinglePageBlock product={featuredProduct} />
             </div>
-            <SinglePageBlock product={featuredProduct} />
             <PageBlock blockInfos={blockInfos} />
         </>
     );

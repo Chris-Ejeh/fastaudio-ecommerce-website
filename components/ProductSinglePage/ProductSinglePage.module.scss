@@ -1,8 +1,19 @@
 @import '../../styles/shared/color.scss';
+@import '../../styles/shared/mixin.scss';
+
+.container {
+    margin-top: -4rem;
+}
 
 .productContent {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    margin-top: -4rem;
+
+    @include respond-to('medium') {
+        flex-direction: row;
+    }
 }
 
 .featuresContainer {
@@ -11,16 +22,41 @@
     flex: 0 0 635px;
 }
 
+.includesContainer {
+    margin-top: -10rem;
+
+    @include respond-to('small') {
+        margin-top: -23rem;
+        display: flex;
+        align-items: center;
+    }
+
+    @include respond-to('medium') {
+        margin-top: 0;
+        display: block;
+    }
+}
+
 .features {
     font-weight: bold;
     font-size: 32px;
     line-height: 36px;
     letter-spacing: 1.14286px;
     text-transform: uppercase;
+
+    @include respond-to('small') {
+        margin-top: -2rem;
+        margin-right: 12rem;
+    }
+
+    @include respond-to('medium') {
+        margin-top: 0;
+        margin-right: 0;
+    }
 }
 
 .featuresContent {
-    font-weight: 200;
+    font-weight: 500;
     font-size: 15px;
     line-height: 25px;
     mix-blend-mode: normal;
@@ -29,8 +65,40 @@
 
 .galleryContainer {
     display: flex;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     justify-content: space-between;
+    flex-direction: column;
+
+    @include respond-to('small') {
+        flex-direction: row;
+    }
+}
+
+.firstGalleryImage {
+    margin-bottom: 0.5rem;
+
+    @include respond-to('medium') {
+        margin: 0;
+    }
+}
+
+.secondGalleryImage {
+    margin-bottom: 0.5rem;
+
+    @include respond-to('medium') {
+        margin-bottom: 0;
+    }
+}
+
+.thirdGalleryImage {
+    @include respond-to('small') {
+        margin-left: 1rem;
+    }
+
+    @include respond-to('medium') {
+        margin-left: 0;
+    }
 }
 
 .galleryLeftLayout {

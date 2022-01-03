@@ -2,13 +2,13 @@ import Image from 'next/image';
 import { FC, ReactNode } from 'react';
 
 import { formatMoney } from '../../utils/HelperFunctions';
-
+import styles from './Product.module.scss';
 const cn = require('classnames');
 
-import styles from './Product.module.scss';
-
 interface ProductProps {
-    image: string;
+    desktopImage: string;
+    tabletImage: string;
+    mobileImage: string;
     altText: string;
     isNewProduct: boolean;
     productName: string;
@@ -21,7 +21,9 @@ interface ProductProps {
 }
 
 const Product: FC<ProductProps> = ({
-    image,
+    desktopImage,
+    mobileImage,
+    tabletImage,
     altText,
     isNewProduct,
     productName,
@@ -31,9 +33,15 @@ const Product: FC<ProductProps> = ({
     children,
 }) => {
     return (
-        <div className={cn(styles.container, className)}>
-            <div className={styles.imageContainer}>
-                <Image src={image} width="540" height="560" alt={altText} />
+        <div className={cn('container', styles.container, className)}>
+            <div className={styles.desktopImage}>
+                <Image src={desktopImage} width="540" height="560" alt={altText} className={styles.image} />
+            </div>
+            <div className={styles.tabletImage}>
+                <Image src={tabletImage} width="689" height="352" alt={altText} className={styles.image} />
+            </div>
+            <div className={styles.mobileImage}>
+                <Image src={mobileImage} width="360" height="362" alt={altText} className={styles.image} />
             </div>
 
             <div className={styles.infoContainer}>

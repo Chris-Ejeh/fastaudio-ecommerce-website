@@ -8,16 +8,11 @@
     align-items: center;
     margin-bottom: 8rem;
 
-    @include respond-to('medium') {
-        display: flex;
+    @include respond-to('small') {
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 10rem;
-
-        &:nth-last-child(2n) {
-            flex-direction: row-reverse;
-        }
     }
 }
 
@@ -45,7 +40,7 @@
 }
 
 .mobileImage {
-    display: contents;
+    display: block;
 
     @include respond-to('small') {
         display: none;
@@ -60,10 +55,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 2rem;
 
-    @include respond-to('medium') {
+    @include respond-to('small') {
         width: 45%;
         justify-content: center;
         align-items: flex-start;
@@ -86,12 +81,13 @@
     letter-spacing: 1.42857px;
     text-transform: uppercase;
     margin: 0;
-    text-align: center;
+    text-align: left;
+    width: 50%;
 
     @include respond-to('small') {
         font-size: 40px;
         line-height: 44px;
-        width: 50%;
+        //width: 50%;
     }
 
     @include respond-to('medium') {
@@ -104,14 +100,13 @@
     line-height: 25px;
     mix-blend-mode: normal;
     opacity: 0.5;
-    margin-bottom: 3rem;
-    text-align: center;
+    text-align: left;
     font-weight: 500;
     font-size: 15px;
     line-height: 25px;
 
     @include respond-to('small') {
-        width: 75%;
+        width: 95%;
     }
 
     @include respond-to('medium') {
@@ -126,4 +121,28 @@
     letter-spacing: 1.28571px;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+}
+
+.buttonContainer {
+    display: flex;
+}
+
+.countButton {
+    width: 140px;
+
+    @include respond-to('small') {
+        width: auto;
+    }
+}
+
+.cartButton {
+    width: 180px;
+
+    @include respond-to('small') {
+        width: 160px;
+    }
+
+    @include respond-to('medium') {
+        width: auto;
+    }
 }

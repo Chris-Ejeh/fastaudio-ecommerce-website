@@ -111,22 +111,64 @@
     }
 }
 
+.desktopImage {
+    display: none;
+    @include respond-to('large') {
+        display: contents;
+    }
+}
+
+.tabletImage {
+    display: none;
+
+    @include respond-to('small') {
+        display: contents;
+    }
+
+    @include respond-to('large') {
+        display: none;
+    }
+}
+
+.mobileImage {
+    display: contents;
+
+    @include respond-to('small') {
+        display: none;
+    }
+
+    @include respond-to('large') {
+        display: none;
+    }
+}
+
+//////Single Page Block Styles ////////////////
 .singlePageBlockContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin: 6rem 0;
+
+    @include respond-to('small') {
+        margin: 10rem 0;
+    }
 }
 
 .singleContentContainer {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-between;
+
+    @include respond-to('small') {
+        flex-direction: row-reverse;
+    }
 }
 
 .singlePageContent {
     text-align: center;
+    @include respond-to('small') {
+        // flex-direction: row-reverse;
+    }
 }
 
 .singlePageHeader {
@@ -146,4 +188,14 @@
     letter-spacing: 1.71429px;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+}
+
+.button {
+    width: 45%;
+    margin-bottom: 3rem;
+
+    @include respond-to('small') {
+        width: auto;
+        margin-bottom: auto;
+    }
 }
