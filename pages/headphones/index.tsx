@@ -1,13 +1,17 @@
+import { GetStaticProps } from 'next';
 import { FC } from 'react';
 
 import Layout from '../../components/Layout';
 import Products from '../../components/Products';
 import { menuItems } from '../../seed-data';
 import { getCategories, getProducts } from '../../utils/HelperFunctions';
-import { ProductType } from '../../utils/types';
+import { IProducts, ProductType } from '../../utils/types';
 
-const headphones: FC = () => {
-    const products = getProducts(ProductType.Headphones);
+export interface PageProps {
+    products: IProducts[];
+}
+
+const headphones: FC<PageProps> = ({ products }) => {
     const blockInfos = getCategories();
 
     return (
@@ -15,6 +19,15 @@ const headphones: FC = () => {
             <Products products={products} blockInfos={blockInfos} />
         </Layout>
     );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+    const products = getProducts(ProductType.Headphones);
+
+    return {
+        props: { products },
+        revalidate: 60,
+    };
 };
 
 export default headphones;

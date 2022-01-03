@@ -18,7 +18,6 @@ interface SingleProductProps {
 }
 
 const SingleProduct: FC<SingleProductProps> = ({ product, className }) => {
-    const { image, description, name, newProduct, price } = product;
     const { setCartOpen } = useContext(AppContext);
     const { count, negativeHandler, positiveHandler, resetCount } = CartCounter();
 
@@ -33,21 +32,39 @@ const SingleProduct: FC<SingleProductProps> = ({ product, className }) => {
     return (
         <div className={cn(styles.container, className)}>
             <div className={styles.desktopImage}>
-                <Image src={image.desktop} width="540" height="560" alt={name} className={styles.image} />
+                <Image
+                    src={product?.image?.desktop}
+                    width="540"
+                    height="560"
+                    alt={product?.name}
+                    className={styles.image}
+                />
             </div>
             <div className={styles.tabletImage}>
-                <Image src={image.tablet} width="281" height="480" alt={name} className={styles.image} />
+                <Image
+                    src={product?.image?.tablet}
+                    width="281"
+                    height="480"
+                    alt={product?.name}
+                    className={styles.image}
+                />
             </div>
             <div className={styles.mobileImage}>
-                <Image src={image.mobile} width="360" height="362" alt={name} className={styles.image} />
+                <Image
+                    src={product?.image?.mobile}
+                    width="360"
+                    height="362"
+                    alt={product?.name}
+                    className={styles.image}
+                />
             </div>
 
             <div className={styles.infoContainer}>
-                {newProduct && <h3 className={styles.newProduct}>New Product </h3>}
-                <h4 className={styles.title}>{name} </h4>
-                <p className={styles.description}>{description} </p>
+                {product?.newProduct && <h3 className={styles.newProduct}>New Product </h3>}
+                <h4 className={styles.title}>{product?.name} </h4>
+                <p className={styles.description}>{product?.description} </p>
 
-                {price && <p className={styles.price}>${formatMoney(price)}</p>}
+                {product?.price && <p className={styles.price}>${formatMoney(product?.price)}</p>}
 
                 <div className={styles.buttonContainer}>
                     <CountButton

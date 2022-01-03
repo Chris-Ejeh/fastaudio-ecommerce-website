@@ -37,15 +37,15 @@ const ProductSinglePage: FC<ProductSinglePageProps> = ({ blockInfos, featuredPro
                 <div className={styles.productContent}>
                     <div className={styles.featuresContainer}>
                         <h4 className={styles.features}>Features</h4>
-                        <p className={styles.featuresContent}>{product.features}</p>
+                        <p className={styles.featuresContent}>{product?.features}</p>
                     </div>
 
                     <div className={styles.includesContainer}>
                         <h4 className={styles.features}>In The Box</h4>
 
                         <ol>
-                            {product.includes.map((include, index) => (
-                                <li key={index} value={include.quantity}>
+                            {product?.includes.map((include, index) => (
+                                <li key={index} value={include?.quantity}>
                                     {include.item}
                                 </li>
                             ))}

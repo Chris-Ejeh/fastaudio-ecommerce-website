@@ -71,18 +71,6 @@ export interface IProducts {
     includes: Includes[];
     gallery: Gallery;
     others: Others[];
-    // cartItem: {
-    //     quantity: string;
-    // };
-    // status: string;
-    // headerDescription: string;
-    // headerImage: IImages;
-    // featuredImage: IImages;
-    // gallery: IImages[];
-    // featuredDescription: string;
-    // isSinglePageProduct: boolean;
-    // includes: IIncludes[];
-    // cartImage: IImages;
 }
 
 export interface IMAGE {

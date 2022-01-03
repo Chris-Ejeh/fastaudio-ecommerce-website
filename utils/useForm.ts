@@ -14,7 +14,7 @@ export default function useForm(initial = {} as FormDataProps) {
 
     function handleChange(e: ChangeEvent<HTMLInputElement>) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        let { value, name, type } = e.target;
+        let { value, name } = e.target;
 
         // if (type === 'number') {
         //     value = parseInt(value);

@@ -54,7 +54,7 @@ const ComplementCard: FC = () => {
         <div className={cn('container', styles.container)}>
             <div className={styles.modal}>
                 <h1 className={styles.title}>
-                    Thank you <span>{`${formData.name}`}</span> for your order
+                    Thank you <span>{`${formData?.name}`}</span> for your order
                 </h1>
                 <h4 className={styles.description}>You will receive an email confirmation shortly.</h4>
 
@@ -62,12 +62,12 @@ const ComplementCard: FC = () => {
                     <div className={styles.cartItem}>
                         {otherItem.map((item, index) => (
                             <div className={styles.item} key={index}>
-                                <Image src={item.image} alt={item.productName} width={50} height={50} />
+                                <Image src={item.image} alt={item?.productName} width={50} height={50} />
                                 <div className={styles.titleContainer}>
-                                    <h5 className={styles.itemName}>{changeName(item.productName)}</h5>
-                                    <p className={styles.price}>${item.price}</p>
+                                    <h5 className={styles.itemName}>{changeName(item?.productName)}</h5>
+                                    <p className={styles.price}>${item?.price}</p>
                                 </div>
-                                <p className={styles.quantity}>x{item.quantity}</p>
+                                <p className={styles.quantity}>x{item?.quantity}</p>
                             </div>
                         ))}
 

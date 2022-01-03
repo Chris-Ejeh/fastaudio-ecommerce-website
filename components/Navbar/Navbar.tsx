@@ -41,7 +41,7 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
                     <li key={index} className={styles.navItem}>
                         <Link href={navItem.path} shallow={true} passHref>
                             <a className={styles.links} role="link">
-                                {navItem.title}
+                                {navItem?.title}
                             </a>
                         </Link>
                     </li>

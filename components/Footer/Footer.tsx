@@ -25,7 +25,7 @@ const Footer: FC<FooterProps> = ({ navItems }) => {
                             <li key={index} className={styles.navItem}>
                                 <Link href={navItem.path} passHref>
                                     <a className={styles.links} role="link">
-                                        {navItem.title}
+                                        {navItem?.title}
                                     </a>
                                 </Link>
                             </li>

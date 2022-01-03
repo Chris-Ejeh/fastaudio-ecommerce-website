@@ -16,10 +16,10 @@ const ProductGallery: FC<ProductGalleryProps> = ({ divClassName, imageClassName,
             <div className={divClassName}>
                 <div className={styles.firstGalleryImage}>
                     <Image
-                        src={product.gallery.first.desktop}
+                        src={product?.gallery?.first?.desktop}
                         width="445"
                         height="280"
-                        alt={product.name}
+                        alt={product?.name}
                         className={imageClassName}
                         quality={100}
                     />
@@ -27,10 +27,10 @@ const ProductGallery: FC<ProductGalleryProps> = ({ divClassName, imageClassName,
 
                 <div className={styles.secondGalleryImage}>
                     <Image
-                        src={product.gallery.second.desktop}
+                        src={product?.gallery?.second?.desktop}
                         width="445"
                         height="280"
-                        alt={product.name}
+                        alt={product?.name}
                         className={imageClassName}
                         quality={100}
                     />
@@ -38,10 +38,10 @@ const ProductGallery: FC<ProductGalleryProps> = ({ divClassName, imageClassName,
             </div>
             <div className={styles.thirdGalleryImage}>
                 <Image
-                    src={product.gallery.third.desktop}
+                    src={product?.gallery?.third?.desktop}
                     width="685"
                     height="592"
-                    alt={product.name}
+                    alt={product?.name}
                     className={imageClassName}
                     quality={100}
                 />

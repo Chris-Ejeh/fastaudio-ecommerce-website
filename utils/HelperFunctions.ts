@@ -10,12 +10,26 @@ export const getProducts = (productCategory: ProductType | string) => {
     });
 };
 
-export const getProduct = (pathname: string) => {
-    return products.filter((product) => {
-        if (product.slug === pathname) {
-            return product;
+export const getAllProducts = () => {
+    return products;
+};
+
+export const getProduct = (pathname?: string | string[]) => {
+    // return products.filter((product) => {
+    //     if (product.slug === pathname) {
+    //         return product;
+    //     }
+    // });
+
+    let items = {};
+
+    products.forEach((product) => {
+        if (product?.slug === pathname) {
+            items = product;
         }
     });
+
+    return items;
 };
 
 export const getCategories = () => {

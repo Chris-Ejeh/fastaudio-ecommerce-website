@@ -21,20 +21,20 @@ const SinglePageBlock: FC<SinglePageProps> = ({ product }) => {
                     <div key={index} className={styles.singlePageContent}>
                         <div className={styles.desktopImage}>
                             <Image
-                                src={item.featureImage.desktop}
+                                src={item?.featureImage?.desktop}
                                 width="540"
                                 height="560"
-                                alt={item.featureName}
+                                alt={item?.featureName}
                                 quality={100}
                                 className={styles.image}
                             />
                         </div>
                         <div className={styles.tabletImage}>
                             <Image
-                                src={item.featureImage.mobile}
+                                src={item?.featureImage?.mobile}
                                 width="230"
                                 height="300"
-                                alt={item.featureName}
+                                alt={item?.featureName}
                                 quality={100}
                                 objectFit="contain"
                                 className={styles.image}
@@ -42,17 +42,17 @@ const SinglePageBlock: FC<SinglePageProps> = ({ product }) => {
                         </div>
                         <div className={styles.mobileImage}>
                             <Image
-                                src={item.featureImage.tablet}
+                                src={item?.featureImage?.tablet}
                                 width="427"
                                 height="220"
-                                alt={item.featureName}
+                                alt={item?.featureName}
                                 quality={100}
                                 objectFit={'contain'}
                                 className={styles.image}
                             />
                         </div>
 
-                        <h4 className={styles.singlePageTitle}>{item.featureName}</h4>
+                        <h4 className={styles.singlePageTitle}>{item?.featureName}</h4>
                         <Button
                             title="See Product"
                             className={styles.button}
