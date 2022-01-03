@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
-import { storeRoutePath } from '../apollo/apollo-cache';
-import { ButtonColors, ICategories, IProducts } from '../utils/types';
-import Button from './Button/Button';
+import { ICategories, IProducts } from '../utils/types';
 import ProductHeader from './HeaderFooterInfo/ProductHeader';
 import PageBlock from './PageBlock/PageBlock';
 import Product from './Product/Product';
@@ -26,6 +24,7 @@ const Products: FC<IProductsProps> = ({ blockInfos, products }) => {
                         <Product
                             key={index}
                             altText={product.name}
+                            slug={product.slug}
                             isNewProduct={product.newProduct}
                             desktopImage={product.categoryPreviewImage.desktop}
                             tabletImage={product.categoryPreviewImage.tablet}
@@ -33,18 +32,7 @@ const Products: FC<IProductsProps> = ({ blockInfos, products }) => {
                             productName={product.name}
                             // eslint-disable-next-line prettier/prettier
                             productDescription={product.description}
-                        >
-                            <Button
-                                title="See Product"
-                                className="button"
-                                buttonColor={ButtonColors.PrimaryColor}
-                                onClick={() => {
-                                    router.push(`${router.pathname}/${encodeURIComponent(product.slug)}`);
-                                    storeRoutePath(product.slug);
-                                }}
-                                type="button"
-                            />
-                        </Product>
+                        />
                     );
                 })}
             </div>

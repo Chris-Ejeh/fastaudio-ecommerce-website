@@ -1,5 +1,9 @@
+import { storeRoutePath } from 'apollo/apollo-cache';
+import Button from 'components/Button/Button';
 import Image from 'next/image';
-import { FC, ReactNode } from 'react';
+import { useRouter } from 'next/router';
+import { FC } from 'react';
+import { ButtonColors } from 'utils/types';
 
 import { formatMoney } from '../../utils/HelperFunctions';
 import styles from './Product.module.scss';
@@ -10,14 +14,12 @@ interface ProductProps {
     tabletImage: string;
     mobileImage: string;
     altText: string;
+    slug: string;
     isNewProduct: boolean;
     productName: string;
     productDescription: string;
     productPrice?: number;
     className?: string;
-    renderCartValue?: boolean;
-    hasCart?: boolean;
-    children: ReactNode;
 }
 
 const Product: FC<ProductProps> = ({
@@ -25,13 +27,15 @@ const Product: FC<ProductProps> = ({
     mobileImage,
     tabletImage,
     altText,
+    slug,
     isNewProduct,
     productName,
     productDescription,
     productPrice,
     className,
-    children,
 }) => {
+    const router = useRouter();
+
     return (
         <div className={cn('container', styles.container, className)}>
             <div className={styles.desktopImage}>
@@ -51,7 +55,18 @@ const Product: FC<ProductProps> = ({
 
                 {productPrice && <p className={styles.price}>${formatMoney(productPrice)}</p>}
 
-                <div className={styles.buttonContainer}>{children}</div>
+                <div className={styles.buttonContainer}>
+                    <Button
+                        title="See Product"
+                        className={styles.button}
+                        buttonColor={ButtonColors.PrimaryColor}
+                        onClick={() => {
+                            router.push(`${router.pathname}/${encodeURIComponent(slug)}`);
+                            storeRoutePath(slug);
+                        }}
+                        type="button"
+                    />
+                </div>
             </div>
         </div>
     );

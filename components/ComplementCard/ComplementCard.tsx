@@ -51,7 +51,7 @@ const ComplementCard: FC = () => {
     };
 
     return !formOpen ? null : (
-        <div className={cn(styles.container)}>
+        <div className={cn('container', styles.container)}>
             <div className={styles.modal}>
                 <h1 className={styles.title}>
                     Thank you <span>{`${formData.name}`}</span> for your order

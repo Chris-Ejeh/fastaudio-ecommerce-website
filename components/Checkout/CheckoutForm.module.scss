@@ -1,4 +1,5 @@
 @import '../../styles/shared/color.scss';
+@import '../../styles/shared/mixin.scss';
 
 .wrapper {
     margin-top: -6rem;
@@ -7,6 +8,11 @@
 .checkoutContainer {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+
+    @include respond-to('medium') {
+        flex-direction: row;
+    }
 }
 
 .formContainer,
@@ -17,18 +23,31 @@
 }
 
 .formContainer {
-    width: 750px;
-    margin-bottom: 7rem;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+
+    @include respond-to('medium') {
+        width: 750px;
+        margin-bottom: 7rem;
+        margin-top: 0;
+    }
 }
 
 .cartContainer {
     height: fit-content;
-    width: 350px;
+
+    @include respond-to('medium') {
+        width: 350px;
+    }
 }
 
 .button {
     background-color: $grey;
-    margin-top: 6rem;
+    margin-top: 1rem;
+
+    @include respond-to('small') {
+        margin-top: 6rem;
+    }
 }
 
 .checkout {
@@ -55,6 +74,15 @@
     }
 }
 
+.fieldsetTitle {
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.928571px;
+    text-transform: uppercase;
+}
+
 .inputWrapper {
     display: flex;
     flex-wrap: wrap;
@@ -70,17 +98,24 @@
     line-height: 16px;
     letter-spacing: -0.214286px;
     margin: 1rem 0.8rem 1rem 0.5rem;
-
-    &.fullwidth {
-        width: 100%;
-    }
-
-    &.halfwidth {
-        width: 47%;
-    }
+    width: 100%;
 
     &.radiowidth {
         width: 8%;
+    }
+
+    @include respond-to('small') {
+        &.fullwidth {
+            width: 100%;
+        }
+
+        &.halfwidth {
+            width: 47%;
+        }
+
+        &.radiowidth {
+            width: 8%;
+        }
     }
 }
 
@@ -106,7 +141,7 @@
 
 .radioContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     color: $black;
     font-style: normal;
@@ -116,8 +151,19 @@
     letter-spacing: -0.214286px;
     margin: 1rem 0.8rem 1rem 0.5rem;
 
-    & > div {
-        width: 46%;
+    @include respond-to('small') {
+        flex-direction: row;
+
+        & > div {
+            width: 46%;
+        }
+    }
+}
+
+.radioLabel {
+    margin-bottom: 2rem;
+    @include respond-to('small') {
+        margin-bottom: 20;
     }
 }
 
@@ -144,4 +190,6 @@
 
 .radioOutline {
     cursor: pointer;
+    border: none;
+    outline: none;
 }

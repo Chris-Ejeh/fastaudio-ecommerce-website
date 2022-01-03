@@ -17,7 +17,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                 <div className={styles.formContainer}>
                     <h1 className={styles.checkout}>Checkout</h1>
                     <div className={styles.fieldset}>
-                        <p>Billing Details</p>
+                        <p className={styles.fieldsetTitle}>Billing Details</p>
 
                         <div className={styles.inputWrapper}>
                             <TextInput
@@ -57,7 +57,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                     </div>
 
                     <div className={styles.fieldset}>
-                        <p>Shipping Info</p>
+                        <p className={styles.fieldsetTitle}>Shipping Info</p>
 
                         <div className={styles.inputWrapper}>
                             <TextInput
@@ -105,7 +105,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                     </div>
 
                     <div className={styles.fieldset}>
-                        <p>Payment Details</p>
+                        <p className={styles.fieldsetTitle}>Payment Details</p>
 
                         <div className={styles.radioContainer}>
                             <label className={styles.radioLabel} htmlFor="payment">

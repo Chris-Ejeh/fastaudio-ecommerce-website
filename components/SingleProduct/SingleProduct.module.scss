@@ -82,12 +82,12 @@
     text-transform: uppercase;
     margin: 0;
     text-align: left;
-    width: 50%;
+    width: 55%;
 
     @include respond-to('small') {
         font-size: 40px;
         line-height: 44px;
-        //width: 50%;
+        width: 80%;
     }
 
     @include respond-to('medium') {

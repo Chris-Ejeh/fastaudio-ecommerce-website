@@ -1,4 +1,5 @@
 @import '../../styles/shared/color.scss';
+@import '../../styles/shared/mixin.scss';
 
 .cartContainer {
     position: fixed;
@@ -12,17 +13,27 @@
 }
 
 .modal {
-    display: flex;
-    border-radius: 8px;
     background: white;
-    width: 21%;
-    height: auto;
-    left: 80%;
-    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    display: flex;
     flex-direction: column;
+    transform: translate(0, 45%);
+    height: auto;
     padding: 2rem;
-    position: fixed;
+    width: 90%;
     z-index: 1;
+
+    @include respond-to('small') {
+        transform: translate(40%, 30%);
+        width: 50%;
+    }
+
+    @include respond-to('medium') {
+        left: 80%;
+        transform: translate(-50%, -50%);
+        width: 21%;
+        position: fixed;
+    }
 }
 
 .modalEmpty {

@@ -24,7 +24,7 @@ const CartLayout: FC<CartLayoutProps> = ({ cartType, onClick }) => {
     const router = useRouter();
 
     return (
-        <div className={cn('container', styles.cart)}>
+        <div className={cn(styles.cart)}>
             {cartType === 'cart' ? (
                 <div className={styles.cartHeader}>
                     {cartItems && <h4 className={styles.cartHeaderText}>{`Cart (${cartItems.length})`} </h4>}
