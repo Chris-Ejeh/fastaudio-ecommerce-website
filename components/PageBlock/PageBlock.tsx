@@ -39,7 +39,7 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                         src="/images/shared/desktop/image-best-gear.jpg"
                         width="540"
                         height="588"
-                        alt="Bringing you the best audio gear"
+                        alt=""
                         className={styles.image}
                     />
                 </div>
@@ -48,7 +48,7 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                         src="/images/shared/tablet/image-best-gear.jpg"
                         width="689"
                         height="300"
-                        alt="Bringing you the best audio gear"
+                        alt=""
                         className={styles.image}
                     />
                 </div>
@@ -57,7 +57,7 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                         src="/images/shared/mobile/image-best-gear.jpg"
                         width="327"
                         height="300"
-                        alt="Bringing you the best audio gear"
+                        alt=""
                         className={styles.image}
                     />
                 </div>

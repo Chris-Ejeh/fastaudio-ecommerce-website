@@ -19,6 +19,7 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
 
     return (
         <nav
+            role="navigation"
             className={cn('container', styles.nav, {
                 [styles.active]: withCart,
                 // eslint-disable-next-line prettier/prettier
@@ -30,8 +31,8 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
 
             <div className={styles.logo}>
                 <Link href="/" passHref>
-                    <a role="link">
-                        <Image src="/svgs/logo.svg" width={143} height={25} />
+                    <a aria-label="logo">
+                        <Image src="/svgs/logo.svg" alt="logo" width={143} height={25} />
                     </a>
                 </Link>
             </div>
@@ -40,7 +41,7 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
                 {navItems.map((navItem, index) => (
                     <li key={index} className={styles.navItem}>
                         <Link href={navItem.path} shallow={true} passHref>
-                            <a className={styles.links} role="link">
+                            <a className={styles.links} aria-label={navItem?.title}>
                                 {navItem?.title}
                             </a>
                         </Link>
@@ -59,7 +60,7 @@ const Navbar: FC<navProps> = ({ navItems, withCart }) => {
                     // eslint-disable-next-line prettier/prettier
                     tabIndex={0}
                 >
-                    <Image src="/svgs/icon-cart.svg" width={23} height={20} />
+                    <Image src="/svgs/icon-cart.svg" alt="cart-logo" width={23} height={20} />
                 </button>
             )}
         </nav>

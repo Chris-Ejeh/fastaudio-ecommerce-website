@@ -11,7 +11,7 @@ interface headerProps {
 
 const Header: FC<headerProps> = ({ navItems }) => {
     return (
-        <header className={cn(styles.header)}>
+        <header role="banner" className={cn(styles.header)}>
             <Navbar navItems={navItems} withCart={true} />
         </header>
     );
