@@ -72,7 +72,7 @@
 
 .newProduct {
     font-weight: normal;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 19px;
     letter-spacing: 10px;
     text-transform: uppercase;
@@ -81,22 +81,23 @@
 
 .title {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 1.8rem;
     line-height: 38px;
     letter-spacing: 1.42857px;
     text-transform: uppercase;
     margin: 0;
     text-align: center;
+    width: 60%;
 
     @include respond-to('small') {
-        font-size: 40px;
+        font-size: 2.8rem;
         line-height: 44px;
         width: 50%;
     }
 
     @include respond-to('medium') {
         text-align: left;
-        width: 55%;
+        width: 58%;
     }
 }
 
@@ -107,11 +108,11 @@
     margin-bottom: 3rem;
     text-align: center;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 25px;
 
     @include respond-to('small') {
-        width: 75%;
+        width: 70%;
     }
 
     @include respond-to('medium') {
@@ -121,7 +122,7 @@
 
 .price {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 25px;
     letter-spacing: 1.28571px;
     text-transform: uppercase;

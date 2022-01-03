@@ -40,7 +40,7 @@
 .title {
     color: $black;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 28px;
     letter-spacing: 0.85741px;
     text-transform: uppercase;
@@ -51,7 +51,7 @@
     }
 
     @include respond-to('small') {
-        font-size: 32px;
+        font-size: 2.5rem;
         line-height: 36px;
         letter-spacing: 1.14286px;
     }
@@ -60,7 +60,7 @@
 .description {
     color: $black;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 25px;
     mix-blend-mode: normal;
     opacity: 0.5;
@@ -106,14 +106,14 @@
 .itemName {
     margin-bottom: 0;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 25px;
 }
 
 .price {
     margin-top: 0;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 25px;
     mix-blend-mode: normal;
     opacity: 0.5;
@@ -121,7 +121,7 @@
 
 .quantity {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 25px;
     text-align: right;
     mix-blend-mode: normal;
@@ -131,7 +131,7 @@
 .count {
     margin-top: 0;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 16px;
     letter-spacing: -0.214286px;
     mix-blend-mode: normal;
@@ -161,7 +161,7 @@
 
 .totalTitle {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 25px;
     mix-blend-mode: normal;
     opacity: 0.5;
@@ -170,7 +170,7 @@
 
 .total {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 25px;
     text-align: right;
     text-transform: uppercase;
