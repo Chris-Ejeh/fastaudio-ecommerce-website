@@ -40,6 +40,11 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 ## Getting Started
 
+First, install the dependencies:
+```bash
+npm install
+```
+
 First, run the development server:
 
 ```bash
