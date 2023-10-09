@@ -70,6 +70,7 @@ const CheckoutForm: FC = () => {
                 onClick={() => router.back()}
                 type="button"
             />
+
             <Form
                 inputs={inputs}
                 errors={error}
@@ -77,6 +78,7 @@ const CheckoutForm: FC = () => {
                     handleChange(e);
                     handleFormError(e);
                 }}
+                // eslint-disable-next-line prettier/prettier
                 onSubmit={handleSubmit}
             >
                 <CartLayout cartType={CartLayoutType.Checkout} />
