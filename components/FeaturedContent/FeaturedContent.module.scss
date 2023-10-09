@@ -7,6 +7,7 @@
 .thirdContainer {
     display: flex;
     border-radius: 8px;
+    margin-bottom: 2rem;
     position: relative;
 }
 
@@ -17,7 +18,6 @@
 }
 
 .firstContainer {
-    margin-bottom: 1rem;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -26,7 +26,7 @@
     background-repeat: no-repeat;
     background-position: left 50% bottom 280%;
     background-size: 170%;
-    height: 600px;
+    height: 390px;
     z-index: 1;
     color: $white;
     position: relative;
@@ -40,56 +40,36 @@
     @include respond-to('small') {
         background-position: right 50% top 130%;
         background-size: 140%;
-        height: 720px;
         flex-direction: column;
     }
 
     @include respond-to('medium') {
-        background: url($featuredBackground) $primary-color no-repeat left -8rem top 20%;
-        height: 560px;
+        background: url($featuredBackground) $primary-color no-repeat left -10rem top 20%;
         flex-direction: row;
     }
 
     .name {
-        font-size: 2.5rem;
-        line-height: 40px;
+        font-size: 2rem;
+        line-height: 30px;
         letter-spacing: 1.28px;
-        text-align: center;
         width: 60%;
 
         @include respond-to('small') {
-            font-size: 3.5rem;
-            line-height: 58px;
+            font-size: 2.5rem;
+            line-height: 48px;
             letter-spacing: 2px;
             width: fit-content;
             width: 40%;
         }
-
-        @include respond-to('medium') {
-            width: fit-content;
-            text-align: justify;
-        }
     }
 
     .description {
-        font-size: 1rem;
-        line-height: 25px;
+        font-size: 0.8rem;
+        line-height: 20px;
         font-weight: 500;
         mix-blend-mode: normal;
         opacity: 0.75;
         margin-bottom: 2rem;
-        width: 90%;
-        text-align: center;
-
-        @include respond-to('small') {
-            width: fit-content;
-            width: 50%;
-        }
-
-        @include respond-to('medium') {
-            width: fit-content;
-            text-align: justify;
-        }
     }
 
     .button {
@@ -108,39 +88,37 @@
             width: fit-content;
         }
     }
-}
 
-.firstImage {
-    margin-top: 4rem;
-    height: 207px;
-    width: 172px;
-
-    @include respond-to('small') {
-        height: 237px;
-        width: 197.21px;
-    }
-
-    @include respond-to('medium') {
-        margin-top: 8rem;
+    .firstImage {
+        margin-top: 1rem;
         margin-left: 10rem;
-        height: auto;
-        width: auto;
+        height: 207px;
+        width: 172px;
+
+        @include respond-to('small') {
+            height: 237px;
+            width: 197.21px;
+        }
+
+        @include respond-to('medium') {
+            height: 300px;
+            width: 300px;
+        }
     }
-}
 
-.firstInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4rem;
-
-    @include respond-to('medium') {
+    .firstInfo {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        text-align: left;
-        width: 30%;
-        margin-right: 7rem;
+        align-items: center;
+
+        @include respond-to('medium') {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            width: 30%;
+            margin-right: 7rem;
+        }
     }
 }
 
@@ -148,11 +126,10 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
-    background-repeat: no-repeat;
+    height: 250px;
     background-size: cover;
-    height: 320px;
-    background-position: left;
-    margin-bottom: 2rem;
+    background-repeat: no-repeat;
+    background-position: bottom;
 
     .name {
         font-size: 1.8rem;
@@ -193,8 +170,8 @@
 
 .thirdContainer {
     justify-content: space-between;
-    margin-bottom: 10rem;
     flex-direction: column;
+    height: 250px;
 
     @include respond-to('small') {
         flex-direction: row;
@@ -217,11 +194,8 @@
         align-items: center;
         background-color: $grey;
         border-radius: 8px;
-        height: 200px;
-        margin-top: 1rem;
 
         @include respond-to('small') {
-            height: 320px;
             width: 570px;
             margin-left: 1rem;
         }

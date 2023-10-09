@@ -55,7 +55,7 @@ const CartLayout: FC<CartLayoutProps> = ({ cartType, onClick }) => {
                             </div>
                         </div>
 
-                        <p>x{quantity}</p>
+                        <p className={styles.quanity}>x{quantity}</p>
                     </div>
                 );
             })}
@@ -69,17 +69,17 @@ const CartLayout: FC<CartLayoutProps> = ({ cartType, onClick }) => {
                 <>
                     <div className={styles.totalContainer}>
                         <p className={styles.totalText}>Shipping</p>
-                        <p className={styles.totalPrice}>$50</p>
+                        <p className={styles.totalPrice}>{cartItems.length === 0 ? '$0' : '$10'}</p>
                     </div>
                     <div className={styles.totalContainer}>
                         <p className={styles.totalText}>Tax (Included) </p>
-                        <p className={styles.totalPrice}>${formatMoney(calcTaxes(calcTotalPrice(cartItems), 50))}</p>
+                        <p className={styles.totalPrice}>${formatMoney(calcTaxes(calcTotalPrice(cartItems), 10))}</p>
                     </div>
 
                     <div className={styles.grandTotalContainer}>
                         <p className={styles.totalText}>Grand Total</p>
                         <p className={styles.totalPrice}>
-                            ${formatMoney(calcGrandTotal(calcTotalPrice(cartItems), 50))}
+                            ${formatMoney(calcGrandTotal(calcTotalPrice(cartItems), 10))}
                         </p>
                     </div>
                 </>
@@ -106,13 +106,17 @@ const CartLayout: FC<CartLayoutProps> = ({ cartType, onClick }) => {
                     />
                 </>
             ) : cartType === 'checkout' ? (
-                <Button
-                    title={`Continue & Pay`}
-                    buttonColor={ButtonColors.PrimaryColor}
-                    className={styles.checkoutButton}
-                    type="submit"
-                    onClick={onClick}
-                />
+                <>
+                    {cartItems.length === 0 ? <span>please add items to your cart</span> : null}
+                    <Button
+                        title={`Continue & Pay`}
+                        buttonColor={ButtonColors.PrimaryColor}
+                        className={styles.checkoutButton}
+                        disabled={cartItems.length === 0}
+                        type="submit"
+                        onClick={onClick}
+                    />
+                </>
             ) : null}
         </div>
     );

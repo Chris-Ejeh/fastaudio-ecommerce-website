@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import styles from './HeaderInfo.module.scss';
+
 const cn = require('classnames');
 
 interface ProductHeaderProps {

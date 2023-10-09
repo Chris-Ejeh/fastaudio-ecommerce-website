@@ -65,27 +65,25 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
 
-.cartHeaderText {
-    font-weight: bold;
-    font-size: 1.2rem;
-    line-height: 25px;
-    letter-spacing: 1.28571px;
-    text-transform: uppercase;
-}
+    .cartHeaderText {
+        font-weight: bold;
+        line-height: 25px;
+        letter-spacing: 1.28571px;
+        text-transform: uppercase;
+    }
 
-.cartButton {
-    font-weight: 500;
-    font-size: 1.1rem;
-    line-height: 25px;
-    text-decoration-line: underline;
-    mix-blend-mode: normal;
-    opacity: 0.5;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    color: $black;
+    .cartButton {
+        font-weight: 500;
+        line-height: 25px;
+        text-decoration-line: underline;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        color: $black;
+    }
 }
 
 .cartContent {
@@ -94,34 +92,38 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-}
+    font-size: 0.6rem;
 
-.imageTextContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .imageTextContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cartInfo {
+        margin-left: 2rem;
+    }
 
-.cartInfo {
-    margin-left: 2rem;
-}
+    .name {
+        font-weight: bold;
+        line-height: 25px;
+        text-transform: uppercase;
+        margin: 0;
+        opacity: 0.5;
+    }
 
-.name {
-    font-weight: bold;
-    font-size: 1.1rem;
-    line-height: 25px;
-    text-transform: uppercase;
-    margin: 0;
-}
+    .price {
+        font-size: 0.8rem;
+        font-weight: bold;
+        line-height: 25px;
+        text-transform: uppercase;
+        margin: 0;
+        mix-blend-mode: normal;
+    }
 
-.price {
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 25px;
-    text-transform: uppercase;
-    margin: 0;
-    mix-blend-mode: normal;
-    opacity: 0.5;
+    .quanity {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
 }
 
 .countButtonContainer {
@@ -169,7 +171,7 @@
     color: $black;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 25px;
     margin: 0;
     mix-blend-mode: normal;
@@ -178,7 +180,7 @@
 }
 
 .totalPrice {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     line-height: 18px;
     letter-spacing: 1px;

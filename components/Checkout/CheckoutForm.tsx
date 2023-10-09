@@ -3,7 +3,7 @@ import Button from 'components/Button/Button';
 import CartLayout from 'components/Cart/CartLayout';
 import { AppContext } from 'context/AppContext';
 import { useRouter } from 'next/router';
-import { FC, FormEvent, useContext } from 'react';
+import { ChangeEvent, FC, FormEvent, useContext, useState } from 'react';
 import { ButtonColors, CartLayoutType } from 'utils/types';
 import useForm from 'utils/useForm';
 
@@ -13,6 +13,10 @@ import Form from './Form';
 const cn = require('classnames');
 
 const CheckoutForm: FC = () => {
+    const [error, setError] = useState({
+        email: false,
+        name: false,
+    });
     const { setFormOpen } = useContext(AppContext);
     const router = useRouter();
 
@@ -31,9 +35,30 @@ const CheckoutForm: FC = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (inputs.name.length === 0) {
+            setError({ email: false, name: true });
+            return;
+        }
+
+        if (inputs.email.length === 0) {
+            setError({ email: true, name: false });
+            return;
+        }
+
         FormStore(inputs);
         resetForm();
         setFormOpen(true);
+    };
+
+    const handleFormError = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.name === 'name') {
+            setError({ email: false, name: false });
+        }
+
+        if (e.target.name === 'email') {
+            setError({ email: false, name: false });
+        }
     };
 
     return (
@@ -45,7 +70,15 @@ const CheckoutForm: FC = () => {
                 onClick={() => router.back()}
                 type="button"
             />
-            <Form inputs={inputs} handleChange={handleChange} onSubmit={handleSubmit}>
+            <Form
+                inputs={inputs}
+                errors={error}
+                handleChange={(e) => {
+                    handleChange(e);
+                    handleFormError(e);
+                }}
+                onSubmit={handleSubmit}
+            >
                 <CartLayout cartType={CartLayoutType.Checkout} />
             </Form>
         </div>

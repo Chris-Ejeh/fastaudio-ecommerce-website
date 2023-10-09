@@ -25,6 +25,7 @@ const AppProvider: FC = ({ children }) => {
 
     function closeCart() {
         setCartOpen(false);
+        // document.addEventListener('click', () => setCartOpen(false));
     }
 
     function closeForm() {

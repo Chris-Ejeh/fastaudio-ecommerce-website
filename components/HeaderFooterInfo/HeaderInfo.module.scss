@@ -8,25 +8,21 @@
 
 .headerContainer {
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 100%;
+    background-size: 80%;
+    background-position: 60% 100%;
     background-color: $headerBackground;
-    margin-top: -15rem;
     height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 
     @include respond-to('small') {
         height: 800px;
     }
 
     @include respond-to('medium-large') {
-        background-repeat: repeat;
-        background-size: contain;
-        margin-top: -15rem;
-        height: 570px;
+        height: 380px;
     }
 
     @include respond-to('large') {
@@ -62,8 +58,8 @@
 }
 
 .newProduct {
-    font-size: 1rem;
-    line-height: 19px;
+    font-size: 0.5rem;
+    line-height: 10px;
     letter-spacing: 10px;
     text-transform: uppercase;
     mix-blend-mode: normal;
@@ -71,17 +67,17 @@
 }
 
 .headerTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 40px;
-    letter-spacing: 1.269px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
     margin: 1.5rem 0;
 
     @include respond-to('small') {
-        font-size: 3.5rem;
-        line-height: 58px;
-        letter-spacing: 2px;
+        font-size: 3rem;
+        line-height: 40px;
+        letter-spacing: 1px;
     }
 }
 
@@ -111,26 +107,20 @@
 .productContainer {
     background: $dark-grey;
     display: flex;
-    justify-content: center;
-    padding: 3rem 0;
     position: relative;
-    margin-top: -6rem;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
+    padding-left: 4rem;
 
-    @include respond-to('small') {
-        padding: 6rem 0 3rem;
+    .pathName {
+        text-align: center;
+        color: $white;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.5rem;
+        letter-spacing: 1.42857px;
+        text-transform: uppercase;
+        opacity: 0.5;
     }
-}
-
-.pathName {
-    text-align: center;
-    color: $white;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 44px;
-    letter-spacing: 1.42857px;
-    text-transform: uppercase;
 }
 
 .button {

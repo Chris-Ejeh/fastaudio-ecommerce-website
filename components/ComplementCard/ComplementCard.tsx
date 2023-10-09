@@ -53,9 +53,14 @@ const ComplementCard: FC = () => {
     return !formOpen ? null : (
         <div className={cn('container', styles.container)}>
             <div className={styles.modal}>
-                <h1 className={styles.title}>
-                    Thank you <span>{`${formData?.name}`}</span> for your order
-                </h1>
+                {formData?.name ? (
+                    <h1 className={styles.title}>
+                        Thank you <span>{`${formData?.name}`}</span> for your order
+                    </h1>
+                ) : (
+                    <h1 className={styles.title}>Thank you for your order</h1>
+                )}
+
                 <h4 className={styles.description}>You will receive an email confirmation shortly.</h4>
 
                 <div className={styles.cartItemContainer}>
@@ -85,6 +90,7 @@ const ComplementCard: FC = () => {
                                         className={styles.count}
                                         buttonColor={ButtonColors.countButton}
                                         title={buttonTitle}
+                                        disabled
                                         onClick={handleClick}
                                     />
                                 )}

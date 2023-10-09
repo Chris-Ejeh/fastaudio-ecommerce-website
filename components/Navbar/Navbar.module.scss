@@ -34,14 +34,6 @@
 .logo {
     height: 25px;
     width: 143px;
-
-    @include respond-to('small') {
-        margin-right: 25rem;
-    }
-
-    @include respond-to('medium') {
-        margin-right: 0;
-    }
 }
 
 .navItems {
@@ -49,18 +41,17 @@
 
     @include respond-to('medium') {
         display: flex;
-        margin-right: 6rem;
+        gap: 1.5rem;
     }
 }
 
 .navItem {
     font-size: 1rem;
     text-align: center;
-    margin-left: 3rem;
 }
 
 .links {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     line-height: 25px;
     letter-spacing: 2px;

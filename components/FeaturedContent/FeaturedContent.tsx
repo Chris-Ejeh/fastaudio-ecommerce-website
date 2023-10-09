@@ -44,14 +44,7 @@ export const FirstContent: FC<IHomepage> = ({ name, description, desktopImage, p
     );
 };
 
-export const SecondContent: FC<IHomepage> = ({
-    name,
-    description,
-    desktopImage,
-    tabletImage,
-    mobileImage,
-    pathname,
-}) => {
+export const SecondContent: FC<IHomepage> = ({ name, description, tabletImage, mobileImage, pathname }) => {
     const router = useRouter();
 
     return (
@@ -62,12 +55,12 @@ export const SecondContent: FC<IHomepage> = ({
                 }
                 @media (min-width: 768px) {
                     .backgroundImage {
-                        background-image: url(${tabletImage});
+                        background-image: url(${mobileImage});
                     }
                 }
                 @media (min-width: 1020px) {
                     .backgroundImage {
-                        background-image: url(${desktopImage});
+                        background-image: url(${tabletImage});
                     }
                 }
             `}</style>
@@ -95,7 +88,7 @@ export const ThirdContent: FC<IHomepage> = ({ name, description, desktopImage, p
 
     return (
         <div className={styles.thirdContainer}>
-            <Image src={desktopImage} width="570" height="320" alt={name} className={styles.image} />
+            <Image src={desktopImage} width="570" height="200" alt={name} className={styles.image} />
 
             <div className={styles.infoContainer}>
                 <div>

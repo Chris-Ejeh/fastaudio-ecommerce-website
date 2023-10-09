@@ -155,3 +155,8 @@ export interface FormDataProps {
     moneyNumber: string;
     pin: string;
 }
+
+export interface FormErrorProps {
+    name: boolean;
+    email: boolean;
+}

@@ -12,16 +12,17 @@ const cn = require('classnames');
 interface navProps {
     navItems: MenuItems[];
     withCart: boolean;
+    isHomePage: boolean;
 }
 
-const Navbar: FC<navProps> = ({ navItems, withCart }) => {
+const Navbar: FC<navProps> = ({ navItems, withCart, isHomePage }) => {
     const { setCartOpen } = useContext(AppContext);
 
     return (
         <nav
             role="navigation"
             className={cn('container', styles.nav, {
-                [styles.active]: withCart,
+                [styles.active]: isHomePage,
                 // eslint-disable-next-line prettier/prettier
             })}
         >

@@ -11,12 +11,13 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: FC<ButtonProps> = ({ title, type, className, buttonColor, onClick, onSubmit }) => {
+const Button: FC<ButtonProps> = ({ title, type, className, buttonColor, disabled, onClick, onSubmit }) => {
     return (
         <button
             aria-label={title}
             className={cn(styles.button, className, styles[buttonColor])}
             type={type}
+            disabled={disabled}
             // eslint-disable-next-line prettier/prettier
             onClick={onClick}
             // eslint-disable-next-line prettier/prettier

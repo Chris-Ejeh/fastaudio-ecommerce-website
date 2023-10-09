@@ -1,14 +1,11 @@
 @import '../../styles/shared/color.scss';
 @import '../../styles/shared/mixin.scss';
 
-.wrapper {
-    margin-top: -6rem;
-}
-
 .checkoutContainer {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    width: 100%;
 
     @include respond-to('medium') {
         flex-direction: row;
@@ -24,12 +21,10 @@
 
 .formContainer {
     margin-bottom: 2rem;
-    margin-top: -2rem;
 
     @include respond-to('medium') {
-        width: 750px;
+        width: 70%;
         margin-bottom: 7rem;
-        margin-top: 0;
     }
 }
 
@@ -37,7 +32,7 @@
     height: fit-content;
 
     @include respond-to('medium') {
-        width: 350px;
+        width: 28%;
     }
 }
 
@@ -192,4 +187,9 @@
     cursor: pointer;
     border: none;
     outline: none;
+}
+
+.error {
+    color: red;
+    font-size: 0.7rem;
 }

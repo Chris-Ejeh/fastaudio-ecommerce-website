@@ -10,6 +10,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
     title?: string;
     value: string;
     onChange?: ChangeEventHandler<HTMLInputElement>;
+    error?: boolean;
 }
 
 const TextInput: FC<TextInputProps> = ({
@@ -23,6 +24,7 @@ const TextInput: FC<TextInputProps> = ({
     onChange,
     placeholder,
     value,
+    error,
 }) => {
     return (
         <label className={cn(styles.label, styles[InputWidth])} htmlFor={htmlFor}>
@@ -36,6 +38,7 @@ const TextInput: FC<TextInputProps> = ({
                 value={value}
                 onChange={onChange}
             />
+            {error ? <span className={styles.error}>{`please add your ${title} to continue`}</span> : null}
         </label>
     );
 };

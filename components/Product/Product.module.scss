@@ -6,14 +6,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 
     @include respond-to('medium') {
-        display: flex;
-        align-items: center;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 10rem;
 
         &:nth-last-child(2n) {
             flex-direction: row-reverse;
@@ -57,24 +54,19 @@
 }
 
 .infoContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 2rem;
 
     @include respond-to('medium') {
-        width: 45%;
-        justify-content: center;
-        align-items: flex-start;
+        width: 50%;
+        margin-left: 6rem;
     }
 }
 
 .newProduct {
     font-weight: normal;
-    font-size: 1rem;
-    line-height: 19px;
-    letter-spacing: 10px;
+    font-size: 0.7rem;
+    line-height: 15px;
+    letter-spacing: 6px;
     text-transform: uppercase;
     color: $primary-color;
 }
@@ -86,17 +78,16 @@
     letter-spacing: 1.42857px;
     text-transform: uppercase;
     margin: 0;
-    text-align: center;
+
     width: 60%;
 
     @include respond-to('small') {
-        font-size: 2.8rem;
-        line-height: 44px;
+        font-size: 2.5rem;
+        line-height: 35px;
         width: 50%;
     }
 
     @include respond-to('medium') {
-        text-align: left;
         width: 58%;
     }
 }
@@ -104,19 +95,14 @@
 .description {
     line-height: 25px;
     mix-blend-mode: normal;
-    opacity: 0.5;
-    margin-bottom: 3rem;
-    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 1rem;
     font-weight: 500;
-    font-size: 1rem;
-    line-height: 25px;
+    font-size: 0.8rem;
+    line-height: 18px;
 
     @include respond-to('small') {
         width: 70%;
-    }
-
-    @include respond-to('medium') {
-        text-align: left;
     }
 }
 

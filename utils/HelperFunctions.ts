@@ -106,11 +106,17 @@ export const calcTotalPrice = (cart: CartItems): number => {
 };
 
 export const calcTaxes = (total: number, shipping: number) => {
+    if (!total) {
+        return 0;
+    }
     return (total + shipping) * 0.15;
 };
 
 export const calcGrandTotal = (total: number, shipping: number) => {
-    return total + shipping;
+    if (!total) {
+        return 0;
+    }
+    return calcTaxes(total, shipping) + total + shipping;
 };
 
 export const changeName = (items: string) => {

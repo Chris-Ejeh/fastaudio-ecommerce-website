@@ -41,6 +41,7 @@ export default function useForm(initial = {} as FormDataProps) {
         inputs,
         handleChange,
         resetForm,
+
         //clearForm,
     };
 }

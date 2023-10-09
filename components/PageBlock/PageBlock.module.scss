@@ -2,7 +2,7 @@
 @import '../../styles//shared/mixin.scss';
 
 .pageBlockContainer {
-    padding: 6rem 0 10rem;
+    padding-bottom: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
 
@@ -10,139 +10,107 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
-}
 
-.categoryContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @include respond-to('small') {
-        flex-direction: row;
+    .categoryContainer {
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
-    }
-}
 
-.locationContainer {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    text-align: center;
-
-    @include respond-to('medium') {
-        align-items: center;
-        flex-direction: row;
-    }
-}
-
-.infoContainer {
-    color: $black;
-    width: 90%;
-
-    @include respond-to('small') {
-        align-self: center;
-        width: 90%;
+        @include respond-to('small') {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
-    @include respond-to('medium') {
-        width: 40%;
-    }
-}
+    .locationContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        margin-top: 4rem;
 
-.pageTitle {
-    font-weight: bold;
-    font-size: 1.8rem;
-    line-height: 38px;
-    letter-spacing: 1.42857px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
+        @include respond-to('medium') {
+            align-items: center;
+            flex-direction: row;
+        }
 
-    @include respond-to('small') {
-        font-size: 2.8rem;
-        line-height: 44px;
-        letter-spacing: 1.42857px;
-    }
+        .infoContainer {
+            color: $black;
+            width: 90%;
 
-    span {
-        color: $primary-color;
-    }
-}
+            @include respond-to('small') {
+                align-self: center;
+                width: 90%;
+            }
 
-.description {
-    font-weight: 200;
-    font-size: 1rem;
-    line-height: 25px;
-    mix-blend-mode: normal;
-    opacity: 0.5;
-}
+            @include respond-to('medium') {
+                width: 52%;
+            }
+        }
 
-.image {
-    border-radius: 8px;
-}
+        .pageTitle {
+            font-weight: bold;
+            font-size: 1.8rem;
+            line-height: 38px;
+            letter-spacing: 1.42857px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
 
-.desktopImage {
-    display: none;
-    @include respond-to('large') {
-        display: contents;
-    }
-}
+            @include respond-to('small') {
+                font-size: 2.5rem;
+                line-height: 44px;
+                letter-spacing: 1.42857px;
+            }
 
-.tabletImage {
-    display: none;
+            span {
+                color: $primary-color;
+            }
+        }
 
-    @include respond-to('small') {
-        display: contents;
-    }
+        .description {
+            font-weight: 400;
+            font-size: 0.8rem;
+            line-height: 25px;
+            mix-blend-mode: normal;
+            opacity: 0.8;
+        }
 
-    @include respond-to('large') {
-        display: none;
-    }
-}
-
-.mobileImage {
-    display: contents;
-
-    @include respond-to('small') {
-        display: none;
-    }
-
-    @include respond-to('large') {
-        display: none;
-    }
-}
-
-.desktopImage {
-    display: none;
-    @include respond-to('large') {
-        display: contents;
-    }
-}
-
-.tabletImage {
-    display: none;
-
-    @include respond-to('small') {
-        display: contents;
-    }
-
-    @include respond-to('large') {
-        display: none;
-    }
-}
-
-.mobileImage {
-    display: contents;
-
-    @include respond-to('small') {
-        display: none;
-    }
-
-    @include respond-to('large') {
-        display: none;
+        .image {
+            border-radius: 8px;
+        }
     }
 }
 
 //////Single Page Block Styles ////////////////
+.desktopImage {
+    display: none;
+    @include respond-to('large') {
+        display: contents;
+    }
+}
+
+.tabletImage {
+    display: none;
+
+    @include respond-to('small') {
+        display: contents;
+    }
+
+    @include respond-to('large') {
+        display: none;
+    }
+}
+
+.mobileImage {
+    display: contents;
+
+    @include respond-to('small') {
+        display: none;
+    }
+
+    @include respond-to('large') {
+        display: none;
+    }
+}
 .singlePageBlockContainer {
     display: flex;
     flex-direction: column;

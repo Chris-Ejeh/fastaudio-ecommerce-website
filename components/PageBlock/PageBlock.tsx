@@ -19,7 +19,9 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                     <Category key={index} category={blockInfo} />
                 ))}
             </div>
+
             <div>{children}</div>
+
             <div className={styles.locationContainer}>
                 <div className={styles.infoContainer}>
                     <h4 className={styles.pageTitle}>
@@ -34,7 +36,7 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                     </p>
                 </div>
 
-                <div className={styles.desktopImage}>
+                {/* <div className={styles.desktopImage}>
                     <Image
                         src="/images/shared/desktop/image-best-gear.jpg"
                         width="540"
@@ -51,8 +53,8 @@ const PageBlock: FC<PageBlockProps> = ({ blockInfos, children }) => {
                         alt=""
                         className={styles.image}
                     />
-                </div>
-                <div className={styles.mobileImage}>
+                </div> */}
+                <div>
                     <Image
                         src="/images/shared/mobile/image-best-gear.jpg"
                         width="327"

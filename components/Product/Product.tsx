@@ -38,16 +38,17 @@ const Product: FC<ProductProps> = ({
 
     return (
         <div className={cn('container', styles.container, className)}>
-            <div className={styles.desktopImage}>
-                <Image src={desktopImage} width="540" height="560" alt={altText} className={styles.image} />
+            <div>
+                <div className={styles.desktopImage}>
+                    <Image src={desktopImage} width="540" height="560" alt={altText} className={styles.image} />
+                </div>
+                <div className={styles.tabletImage}>
+                    <Image src={tabletImage} width="649" height="352" alt={altText} className={styles.image} />
+                </div>
+                <div className={styles.mobileImage}>
+                    <Image src={mobileImage} width="360" height="362" alt={altText} className={styles.image} />
+                </div>
             </div>
-            <div className={styles.tabletImage}>
-                <Image src={tabletImage} width="689" height="352" alt={altText} className={styles.image} />
-            </div>
-            <div className={styles.mobileImage}>
-                <Image src={mobileImage} width="360" height="362" alt={altText} className={styles.image} />
-            </div>
-
             <div className={styles.infoContainer}>
                 {isNewProduct && <h3 className={styles.newProduct}>New Product </h3>}
                 <h4 className={styles.title}>{productName} </h4>

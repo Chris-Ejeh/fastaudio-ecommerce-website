@@ -1,16 +1,17 @@
 import { ChangeEvent, FC, FormEventHandler } from 'react';
 
-import { FormDataProps, TextWidthType } from '../../utils/types';
+import { FormDataProps, FormErrorProps, TextWidthType } from '../../utils/types';
 import styles from './CheckoutForm.module.scss';
 import TextInput from './TextInput';
 
 interface FormProps {
     inputs: FormDataProps;
+    errors?: FormErrorProps;
     handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
     onSubmit: FormEventHandler<HTMLFormElement> | undefined;
 }
 
-const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
+const Form: FC<FormProps> = ({ handleChange, inputs, errors, onSubmit, children }) => {
     return (
         <form onSubmit={onSubmit}>
             <div className={styles.checkoutContainer}>
@@ -30,6 +31,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                                 InputWidth={TextWidthType.HalfWidth}
                                 value={inputs.name}
                                 onChange={handleChange}
+                                error={errors?.name}
                             />
                             <TextInput
                                 title=" Email Address"
@@ -41,6 +43,7 @@ const Form: FC<FormProps> = ({ handleChange, inputs, onSubmit, children }) => {
                                 InputWidth={TextWidthType.HalfWidth}
                                 value={inputs.email}
                                 onChange={handleChange}
+                                error={errors?.email}
                             />
                             <TextInput
                                 title="Phone Number"
