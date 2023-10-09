@@ -15,7 +15,7 @@ const Cart: FC = () => {
 
     return !cartOpen ? null : (
         <>
-            <div className={cn(styles.cartContainer)}>
+            <div className={cn(styles.cartContainer)} onClick={closeCart} aria-hidden="true">
                 {cartItems.length === 0 ? (
                     <div className={cn('container', styles.modalEmpty, styles.modal)}>
                         <h4 className={styles.cartHeaderText}>Add Item to your cart </h4>
