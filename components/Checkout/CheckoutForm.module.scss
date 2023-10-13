@@ -125,7 +125,7 @@
     font-size: 1rem;
     line-height: 19px;
     letter-spacing: -0.25px;
-    margin-top: 6px;
+    margin: 0.3rem 0;
     padding-left: 1.5rem;
     width: 100%;
 
@@ -189,7 +189,17 @@
     outline: none;
 }
 
-.error {
-    color: red;
-    font-size: 0.7rem;
+.errorContainer {
+    display: flex;
+
+    .warningIcon {
+        color: $red;
+        fill: aqua;
+    }
+    .errorMessage {
+        color: $red;
+        font-size: 0.7rem;
+        font-weight: 500;
+        margin-left: 0.3rem;
+    }
 }

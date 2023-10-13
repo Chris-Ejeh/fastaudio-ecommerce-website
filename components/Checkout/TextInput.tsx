@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ChangeEventHandler, FC, InputHTMLAttributes } from 'react';
 
 import styles from './CheckoutForm.module.scss';
@@ -38,7 +39,18 @@ const TextInput: FC<TextInputProps> = ({
                 value={value}
                 onChange={onChange}
             />
-            {error ? <span className={styles.error}>{`please add your ${title} to continue`}</span> : null}
+            {error ? (
+                <div className={styles.errorContainer}>
+                    <Image
+                        src="/svgs/warning.svg"
+                        alt="facebook-icon"
+                        width={15}
+                        height={15}
+                        className={styles.warningIcon}
+                    />
+                    <span className={styles.errorMessage}>{`Please add your ${title?.toLowerCase()} to continue`}</span>
+                </div>
+            ) : null}
         </label>
     );
 };
