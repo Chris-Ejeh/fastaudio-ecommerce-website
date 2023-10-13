@@ -13,7 +13,7 @@ import Form from './Form';
 const cn = require('classnames');
 
 const CheckoutForm: FC = () => {
-    const [error, setError] = useState({
+    const [errors, setErrors] = useState({
         email: false,
         name: false,
     });
@@ -37,12 +37,12 @@ const CheckoutForm: FC = () => {
         e.preventDefault();
 
         if (inputs.name.length === 0) {
-            setError({ email: false, name: true });
+            setErrors({ email: false, name: true });
             return;
         }
 
         if (inputs.email.length === 0) {
-            setError({ email: true, name: false });
+            setErrors({ email: true, name: false });
             return;
         }
 
@@ -53,11 +53,11 @@ const CheckoutForm: FC = () => {
 
     const handleFormError = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.name === 'name') {
-            setError({ email: false, name: false });
+            setErrors({ email: false, name: false });
         }
 
         if (e.target.name === 'email') {
-            setError({ email: false, name: false });
+            setErrors({ email: false, name: false });
         }
     };
 
@@ -73,7 +73,7 @@ const CheckoutForm: FC = () => {
 
             <Form
                 inputs={inputs}
-                errors={error}
+                errors={errors}
                 handleChange={(e) => {
                     handleChange(e);
                     handleFormError(e);
