@@ -9,29 +9,13 @@
 .headerContainer {
     background-repeat: no-repeat;
     background-size: 80%;
-    background-position: 60% 100%;
+    background-position: 60% -90px;
     background-color: $headerBackground;
-    height: 750px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 4rem;
-
-    @include respond-to('small') {
-        height: 800px;
-    }
-
-    @include respond-to('medium-large') {
-        height: 380px;
-    }
-
-    @include respond-to('large') {
-        height: 760px;
-    }
-
-    @include respond-to('extra-large') {
-        height: 980px;
-    }
 }
 
 .headerInfo {
@@ -46,11 +30,7 @@
 }
 
 .info {
-    flex-basis: 300px;
-
-    @include respond-to('medium') {
-        flex-basis: 200px;
-    }
+    width: 50%;
 }
 
 .footerInfo {
